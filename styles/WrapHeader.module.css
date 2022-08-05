@@ -1,0 +1,160 @@
+.verify {
+  background-color: #fdd;
+  text-align: center;
+  font-size: 12px;
+}
+
+.verify a {
+  color: #07c;
+}
+
+.verify a:hover {
+  text-decoration: underline;
+}
+
+.wrapheader{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 9999;
+
+  border-bottom: 1px solid #e5e5e5;
+
+}
+
+/* BEGIN: Logo, Search, Top Right Links */
+.topheader {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 16px 3vw 0;
+}
+
+.topleft {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex: auto;
+}
+
+.sitelogo {
+  padding-top: 6px;
+  padding-bottom: 14px;
+}
+
+.searchbox {
+  margin-left: 3vw;
+  position: relative;
+  flex: auto;
+  height: 56px;
+}
+
+.searchbutton {
+  background-image: url('../public/img/icon/icon-search.svg');
+  background-color: #fff;
+  height: 22px;
+  right: 14px;
+  position: absolute;
+  top: 16px;
+  width: 22px;
+}
+
+.location {
+  /* display: flex; */
+  padding-top: 4px;
+  padding-left: 50px;
+  padding-right: 15px;
+  padding-bottom: 14px;
+  flex: 50%;
+  justify-content: flex-start;
+}
+
+.toprightlinks {
+  /* display: flex; */
+  padding-top: 4px;
+  /* flex: 50%; */
+  justify-content: flex-end;
+}
+
+
+
+@media (max-width: 1000px) {
+  .toprightlinks {
+    padding-top: 20px;
+    flex: 100%;
+  }
+
+  .location {
+    flex: 100%;
+  }
+}
+
+.toprightlinks a {
+  color: #000;
+}
+
+.toprightlinks a:hover {
+  color: #666;
+}
+
+.toprightsupport {
+  margin-right: 2vw;
+  margin-top: 15px;
+}
+
+.topcurrencylang {
+  padding-right: 2vw;
+  padding-top: 6px;
+}
+
+.toprightlogin {
+  padding-top: 6px;
+  padding-bottom: 14px;
+}
+
+.toprightlogin a {
+  padding-left:15px;
+  padding-right:15px;
+  padding-top:10px;
+  padding-bottom:10px;
+  font-size: 0.98em;
+
+  color: white;
+
+  background: #657ADC;
+  border-radius: 26px;
+
+}
+
+
+.toprightlogin a :hover {
+
+  border: 1px solid #657ADC;
+
+  color: black;
+
+  background:white;
+
+}
+
+.toprightlogin button{
+  margin-right: 5px;
+  background: #FFFFFF;
+  border: 1px solid #E9E9EE;
+  border-radius: 26px;
+
+  color: #0F0F17;
+
+  padding-left: 15px;
+  padding-right: 15px;
+
+}
+
+
+
+/* END: Logo, Search, Top Right Links */
+
+/* BEGIN: Nav list */
+
+/* END: Nav list */
