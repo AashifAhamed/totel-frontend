@@ -1,5 +1,7 @@
 import React, { useContext, useState } from 'react';
 import Link from 'next/link';
+import Image from "next/image";
+
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 
@@ -49,7 +51,7 @@ const WrapHeader = () => {
 			<div className={styles.topheader}>
 				<div className={styles.topleft}>
 					<h1 className={styles.sitelogo}>
-						<img src="/img/logo.png" alt="logo" />
+						<Image src="/img/logo.png" alt="logo" width={117} height={40} />
 					</h1>
 					<div className={styles.location}>
 						<HomeLocation whichComponent="WrapHeader" />
@@ -78,37 +80,6 @@ const WrapHeader = () => {
 				</div>
 				{/* END div.toprightlinks */}
 			</div>
-
-			{/* BEGIN: Nav Menu */}
-			{/* <nav className={styles.navmenu}>
-				<Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-					<Tabs
-						value={navMenuValue}
-						variant="scrollable"
-						scrollButtons="auto"
-						aria-label="scrollable auto tabs">
-						<Link href="/">
-							<Tab label="Home" value="0" />
-						</Link>
-						<Link href="/destination">
-							<Tab label="Destination" value="1" />
-						</Link>
-						<Link href="/tour">
-							<Tab label="Tours" value="2" />
-						</Link>
-						<Link href="/room">
-							<Tab label="Rooms" value="3" />
-						</Link>
-						<Link href="/hotel">
-							<Tab label="Hostels" value="4" />
-						</Link>
-						<Link href="/blog">
-							<Tab label="Blog" value="5" />
-						</Link>
-					</Tabs>
-				</Box>
-			</nav> */}
-			{/* END: Nav Menu */}
 		</div>
 	);
 };

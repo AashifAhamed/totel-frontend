@@ -1,5 +1,5 @@
-import React, {useContext, useState} from 'react';
-import {useRouter} from 'next/router';
+import React, { useContext, useState } from 'react';
+import { useRouter } from 'next/router';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -12,15 +12,19 @@ import Avatar from '@mui/material/Avatar';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import Divider from '@mui/material/Divider';
 
 import { Store } from '../utils/StoreUtils/Store.js';
 import styles from '../styles/WrapHeader.module.css';
 import iconLogout from '../public/img/icon/icon-logout.svg';
 import iconArrowDown from '../public/img/icon/icon-arrow-down.svg';
+import iconPlus from '../public/img/icon/icon-plus.svg';
+import iconBell from '../public/img/icon/icon-bell.svg';
+import iconMessage from '../public/img/icon/icon-message.svg';
 
 const WrapHeaderTopLinks = () => {
-	const {state, dispatch} = useContext(Store);
-	const {userInfo} = state;
+	const { state, dispatch } = useContext(Store);
+	const { userInfo } = state;
 	const router = useRouter();
 
 	// BEGIN CODE: user menu in top right: open/close effect
@@ -35,7 +39,7 @@ const WrapHeaderTopLinks = () => {
 	// END CODE: user menu in top right: open/close effect
 
 	const logoutClickHandler = () => {
-		dispatch({type: 'USER_LOGOUT'});
+		dispatch({ type: 'USER_LOGOUT' });
 		Cookies.remove('userInfo');
 		router.push('/');
 	};
@@ -55,7 +59,7 @@ const WrapHeaderTopLinks = () => {
 				{userInfo ? (
 					<>
 						<Box
-							sx={{display: 'flex', alignItems: 'center', textAlign: 'center'}}>
+							sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
 							<Tooltip title="Account settings">
 								<Button
 									onClick={handleClickTopRightUser}
@@ -63,7 +67,7 @@ const WrapHeaderTopLinks = () => {
 									aria-haspopup="true"
 									aria-expanded={openTopRightUser ? 'true' : undefined}
 									endIcon={<Image src={iconArrowDown} alt="Arrow Down icon" />}
-									style={{color: '#000'}}>
+									style={{ color: '#000' }}>
 									<Avatar alt={userInfo.name} src={userInfo.imgUrl} />
 								</Button>
 							</Tooltip>
@@ -100,8 +104,8 @@ const WrapHeaderTopLinks = () => {
 									},
 								},
 							}}
-							transformOrigin={{horizontal: 'right', vertical: 'top'}}
-							anchorOrigin={{horizontal: 'right', vertical: 'bottom'}}>
+							transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+							anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}>
 							<MenuItem>
 								<Avatar /> <Link href={`/user/${userInfo._id}`}>Profile</Link>
 							</MenuItem>
@@ -110,23 +114,191 @@ const WrapHeaderTopLinks = () => {
 							</MenuItem> */}
 							<MenuItem onClick={logoutClickHandler}>
 								<ListItemIcon>
-								<Image src={iconLogout} alt="Logout icon" />
+									<Image src={iconLogout} alt="Logout icon" />
 								</ListItemIcon>
 								Logout
 							</MenuItem>
 						</Menu>
 					</>
 				) : (
-					<div className={styles.toprightlogin}>
-						<Link href="/post/new">Create Post</Link>&nbsp;&nbsp;&nbsp;&nbsp;
-						{/*  Button */}
+					<div className={styles.leftheaderaccount}>
 						<Button
-							style={{textTransform: 'none'}}
+							className={styles.toprightloginpostbtn}
+							style={{ textTransform: 'none' }}
+							startIcon={<Image src={iconPlus} alt="Plus icon" />}
+							onClick={() => {
+								router.push('/post/new');
+							}}>
+							Post
+						</Button>
+						{/*  Button */}
+						{/* <Button
+							className={styles.toprightloginother}
+							style={{ textTransform: 'none' }}
 							onClick={() => {
 								router.push('/login');
 							}}>
 							Sign In
+						</Button> */}
+						<Button
+							className={styles.toprightloginicon}
+							style={{ textTransform: 'none' }}
+							startIcon={<Image src={iconMessage} alt="Message icon" />}
+							onClick={() => {
+								router.push('/message');
+							}}>
 						</Button>
+						<Button
+							className={styles.toprightloginicon}
+							style={{ textTransform: 'none' }}
+							startIcon={<Image src={iconBell} alt="Bell icon" />}
+							onClick={() => {
+								router.push('/notification');
+							}}>
+						</Button>
+						<Box
+							sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
+							<Tooltip title="Account settings">
+								<Button
+									onClick={handleClickTopRightUser}
+									aria-controls={openTopRightUser ? 'account-menu' : undefined}
+									aria-haspopup="true"
+									aria-expanded={openTopRightUser ? 'true' : undefined}
+									style={{ color: '#000' }}>
+									<Avatar alt={'avatar'} src={'totel/public/user.png'} />
+								</Button>
+							</Tooltip>
+						</Box>
+						{/* <Menu
+							anchorEl={anchorElTopRightUser}
+							id="account-menu"
+							open={openTopRightUser}
+							onClose={handleCloseTopRightUser}
+							onClick={handleCloseTopRightUser}
+							PaperProps={{
+								elevation: 0,
+								sx: {
+									borderRadius: '20px',
+									overflow: 'visible',
+									width: '202px',
+									filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
+									mt: 1.5,
+									'& .MuiAvatar-root': {
+										width: 32,
+										height: 32,
+										ml: -0.5,
+										mr: 1,
+									},
+									'&:before': {
+										content: '""',
+										display: 'block',
+										position: 'absolute',
+										top: 0,
+										right: 47,
+										width: 10,
+										height: 10,
+										bgcolor: 'background.paper',
+										transform: 'translateY(-50%) rotate(45deg)',
+										zIndex: 0,
+									},
+									'.MuiMenuItem-root a':{
+										color: '#696888',
+									}
+								},
+							}}
+							transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+							anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}>
+							<MenuItem>
+								<Link href={`/signup`}>Signup</Link>
+							</MenuItem>
+							<MenuItem>
+								<Link href={`/login`}>Login</Link>
+							</MenuItem>
+							<Divider variant="middle" />
+							<MenuItem>
+								<Link href={`/how-it-work`}>How it Work</Link>
+							</MenuItem>
+							<MenuItem>
+								<Link href={`/help`}>Help</Link>
+							</MenuItem>
+							<MenuItem>
+								<Link  href={`/about-totel`}>About Totel</Link>
+							</MenuItem>
+						</Menu> */}
+
+						<Menu
+							anchorEl={anchorElTopRightUser}
+							id="account-menu"
+							open={openTopRightUser}
+							onClose={handleCloseTopRightUser}
+							onClick={handleCloseTopRightUser}
+							PaperProps={{
+								elevation: 0,
+								sx: {
+									borderRadius: '20px',
+									overflow: 'visible',
+									width: '202px',
+									filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
+									mt: 1.5,
+									'& .MuiAvatar-root': {
+										width: 32,
+										height: 32,
+										ml: -0.5,
+										mr: 1,
+									},
+									'&:before': {
+										content: '""',
+										display: 'block',
+										position: 'absolute',
+										top: 0,
+										right: 47,
+										width: 10,
+										height: 10,
+										bgcolor: 'background.paper',
+										transform: 'translateY(-50%) rotate(45deg)',
+										zIndex: 0,
+									},
+									'.MuiMenuItem-root a': {
+										// color: '#696888',
+									}
+								},
+							}}
+							transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+							anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}>
+							<MenuItem>
+								<Link href={`/signup`}>Profile</Link>
+							</MenuItem>
+							<MenuItem>
+								<Link href={`/login`}>My Booking</Link>
+							</MenuItem>
+							<MenuItem>
+								<Link href={`/how-it-work`}>Bookmark</Link>
+							</MenuItem>
+							<Divider variant="middle" />
+							<MenuItem>
+								<Link href={`/how-it-work`}>How it Work</Link>
+							</MenuItem>
+							<MenuItem>
+								<Link href={`/help`}>Help</Link>
+							</MenuItem>
+							<MenuItem>
+								<Link href={`/about-totel`}>About Totel</Link>
+							</MenuItem>
+							<Divider variant="middle" />
+							<MenuItem>
+								<Link href={`/about-totel`}>Settings</Link>
+							</MenuItem>
+							<MenuItem>
+								<Link href={`/about-totel`}>Logout</Link>
+							</MenuItem>
+
+							{/* <MenuItem onClick={logoutClickHandler}>
+								<ListItemIcon>
+									<Image src={iconLogout} alt="Logout icon" />
+								</ListItemIcon>
+								Logout
+							</MenuItem> */}
+						</Menu>
 
 						{/* <Link href="/send-otp-code">Sign Up</Link> */}
 					</div>
