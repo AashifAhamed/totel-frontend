@@ -22,9 +22,15 @@ import iconPlus from '../public/img/icon/icon-plus.svg';
 import iconBell from '../public/img/icon/icon-bell.svg';
 import iconMessage from '../public/img/icon/icon-message.svg';
 
+import Modal from './Modal'
+import LoginRegister from './LoginRegister';
+
+
 const WrapHeaderTopLinks = () => {
 	const { state, dispatch } = useContext(Store);
 	const { userInfo } = state;
+	const [showModal, setShowModal, showModalSignup, setShowModalSignup] = useState(false);
+
 	const router = useRouter();
 
 	// BEGIN CODE: user menu in top right: open/close effect
@@ -169,63 +175,6 @@ const WrapHeaderTopLinks = () => {
 								</Button>
 							</Tooltip>
 						</Box>
-						{/* <Menu
-							anchorEl={anchorElTopRightUser}
-							id="account-menu"
-							open={openTopRightUser}
-							onClose={handleCloseTopRightUser}
-							onClick={handleCloseTopRightUser}
-							PaperProps={{
-								elevation: 0,
-								sx: {
-									borderRadius: '20px',
-									overflow: 'visible',
-									width: '202px',
-									filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
-									mt: 1.5,
-									'& .MuiAvatar-root': {
-										width: 32,
-										height: 32,
-										ml: -0.5,
-										mr: 1,
-									},
-									'&:before': {
-										content: '""',
-										display: 'block',
-										position: 'absolute',
-										top: 0,
-										right: 47,
-										width: 10,
-										height: 10,
-										bgcolor: 'background.paper',
-										transform: 'translateY(-50%) rotate(45deg)',
-										zIndex: 0,
-									},
-									'.MuiMenuItem-root a':{
-										color: '#696888',
-									}
-								},
-							}}
-							transformOrigin={{ horizontal: 'right', vertical: 'top' }}
-							anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}>
-							<MenuItem>
-								<Link href={`/signup`}>Signup</Link>
-							</MenuItem>
-							<MenuItem>
-								<Link href={`/login`}>Login</Link>
-							</MenuItem>
-							<Divider variant="middle" />
-							<MenuItem>
-								<Link href={`/how-it-work`}>How it Work</Link>
-							</MenuItem>
-							<MenuItem>
-								<Link href={`/help`}>Help</Link>
-							</MenuItem>
-							<MenuItem>
-								<Link  href={`/about-totel`}>About Totel</Link>
-							</MenuItem>
-						</Menu> */}
-
 						<Menu
 							anchorEl={anchorElTopRightUser}
 							id="account-menu"
@@ -259,20 +208,22 @@ const WrapHeaderTopLinks = () => {
 										zIndex: 0,
 									},
 									'.MuiMenuItem-root a': {
-										// color: '#696888',
-									}
+										color: '#696888',
+									},
+									'.MuiMenuItem-root span': {
+										color: '#696888',
+									},
+
+
 								},
 							}}
 							transformOrigin={{ horizontal: 'right', vertical: 'top' }}
 							anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}>
 							<MenuItem>
-								<Link href={`/signup`}>Profile</Link>
+								<Link href={''}><span onClick={() => setShowModal(true)}>Signup</span></Link>
 							</MenuItem>
 							<MenuItem>
-								<Link href={`/login`}>My Booking</Link>
-							</MenuItem>
-							<MenuItem>
-								<Link href={`/how-it-work`}>Bookmark</Link>
+								<Link href={''} ><span onClick={() => setShowModal(true)}>Login</span></Link>
 							</MenuItem>
 							<Divider variant="middle" />
 							<MenuItem>
@@ -284,23 +235,22 @@ const WrapHeaderTopLinks = () => {
 							<MenuItem>
 								<Link href={`/about-totel`}>About Totel</Link>
 							</MenuItem>
-							<Divider variant="middle" />
-							<MenuItem>
-								<Link href={`/about-totel`}>Settings</Link>
-							</MenuItem>
-							<MenuItem>
-								<Link href={`/about-totel`}>Logout</Link>
-							</MenuItem>
-
-							{/* <MenuItem onClick={logoutClickHandler}>
-								<ListItemIcon>
-									<Image src={iconLogout} alt="Logout icon" />
-								</ListItemIcon>
-								Logout
-							</MenuItem> */}
 						</Menu>
-
-						{/* <Link href="/send-otp-code">Sign Up</Link> */}
+						<Modal
+							onClose={() => setShowModal(false)}
+							show={showModal}
+							title="sign up"
+						>
+							<LoginRegister whichPage='login' />
+						</Modal>
+						<Modal
+							onClose={() => setShowModal(false)}
+							show={showModal}
+							title="Log in or sign up"
+						>
+							<LoginRegister whichPage='login' />
+						</Modal>
+						
 					</div>
 				)}
 			</div>

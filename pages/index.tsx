@@ -82,7 +82,7 @@ export default function Home() {
               <div className={styles.image}>
 
                 <Image
-                  src="/img/logregsidebar.jpg"
+                  src="/img/image1.png"
                   alt="name"
                   width={200}
                   height={200}
@@ -101,7 +101,7 @@ export default function Home() {
               <div className={styles.image}>
 
                 <Image
-                  src="/img/logregsidebar.jpg"
+                  src="/img/image2.png"
                   alt="name"
                   width={200}
                   height={200}
@@ -120,7 +120,7 @@ export default function Home() {
               <div className={styles.image}>
 
                 <Image
-                  src="/img/logregsidebar.jpg"
+                  src="/img/image3.png"
                   alt="name"
                   width={200}
                   height={200}
@@ -154,7 +154,7 @@ export default function Home() {
                 <div className={styles.travaller_header}>
                   <div className={styles.travaller_user_image}>
                     <Image
-                      src="/img/logregsidebar.jpg"
+                      src="/img/user1.png"
                       alt="name"
                       width={48}
                       height={48}></Image>
@@ -172,7 +172,7 @@ export default function Home() {
                 </div>
                 <div className={styles.travaller_image}>
                   <Image
-                    src="/img/logregsidebar.jpg"
+                    src="/img/image4.png"
                     alt="name"
                     width={315}
                     height={200}></Image>
@@ -206,13 +206,13 @@ export default function Home() {
                 <div className={styles.travaller_header}>
                   <div className={styles.travaller_user_image}>
                     <Image
-                      src="/img/logregsidebar.jpg"
+                      src="/img/user2.png"
                       alt="name"
                       width={48}
                       height={48}></Image>
                   </div>
                   <div className={styles.travaller_user_details}>
-                    <h4>Sonya Clarke </h4>
+                    <h4>Emilio Tran</h4>
                     <p className={styles.textmuted} style={{ fontSize: "12px", paddingTop: "2px" }}>March 24, 2020</p>
                   </div>
                   <div className={styles.travaller_user_rate}>
@@ -224,7 +224,7 @@ export default function Home() {
                 </div>
                 <div className={styles.travaller_image}>
                   <Image
-                    src="/img/logregsidebar.jpg"
+                    src="/img/image5.png"
                     alt="name"
                     width={315}
                     height={200}></Image>
@@ -243,7 +243,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div className={styles.travaller_body_text}>
-                    Hilton Miami Downtowss
+                  Vagabond Cabin
                   </div>
                   <div className={styles.travaller_body_text}>
                     <p>$100
@@ -258,13 +258,13 @@ export default function Home() {
                 <div className={styles.travaller_header}>
                   <div className={styles.travaller_user_image}>
                     <Image
-                      src="/img/logregsidebar.jpg"
+                      src="/img/user3.png"
                       alt="name"
                       width={48}
                       height={48}></Image>
                   </div>
                   <div className={styles.travaller_user_details}>
-                    <h4>Sonya Clarke </h4>
+                    <h4>Dale Hanson </h4>
                     <p className={styles.textmuted} style={{ fontSize: "12px", paddingTop: "2px" }}>March 24, 2020</p>
                   </div>
                   <div className={styles.travaller_user_rate}>
@@ -276,7 +276,7 @@ export default function Home() {
                 </div>
                 <div className={styles.travaller_image}>
                   <Image
-                    src="/img/logregsidebar.jpg"
+                    src="/img/image7.png"
                     alt="name"
                     width={315}
                     height={200}></Image>
@@ -295,7 +295,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div className={styles.travaller_body_text}>
-                    Hilton Miami Downtowss
+                  Celeste Hotel
                   </div>
                   <div className={styles.travaller_body_text}>
                     <p>$100
@@ -310,13 +310,13 @@ export default function Home() {
                 <div className={styles.travaller_header}>
                   <div className={styles.travaller_user_image}>
                     <Image
-                      src="/img/logregsidebar.jpg"
+                      src="/img/user4.png"
                       alt="name"
                       width={48}
                       height={48}></Image>
                   </div>
                   <div className={styles.travaller_user_details}>
-                    <h4>Sonya Clarke </h4>
+                    <h4>Vanessa Hamilton </h4>
                     <p className={styles.textmuted} style={{ fontSize: "12px", paddingTop: "2px" }}>March 24, 2020</p>
                   </div>
                   <div className={styles.travaller_user_rate}>
@@ -328,7 +328,7 @@ export default function Home() {
                 </div>
                 <div className={styles.travaller_image}>
                   <Image
-                    src="/img/logregsidebar.jpg"
+                    src="/img/image9.png"
                     alt="name"
                     width={315}
                     height={200}></Image>
@@ -347,7 +347,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div className={styles.travaller_body_text}>
-                    Hilton Miami Downtowss
+                  Slumber Cottage
                   </div>
                   <div className={styles.travaller_body_text}>
                     <p>$100
@@ -374,7 +374,7 @@ export default function Home() {
                 <div className={styles.travaller_header}>
                   <div className={styles.travaller_user_image}>
                     <Image
-                      src="/img/logregsidebar.jpg"
+                      src="/img/user5.png"
                       alt="name"
                       width={48}
                       height={48}></Image>
@@ -393,7 +393,115 @@ export default function Home() {
                 <div className={styles.traval_content}>
                   <div className={styles.traval_content_col} >
                     <div className={styles.travaller_body_text}>
-                      Hilton Miami Downtowss
+                    Royal Galaxy Resort
+                    </div>
+                    <div className={styles.travel_finding_partner}>
+                      Finding Partner
+                    </div>
+                    <div className={styles.travel_desc} >
+                      Amet minim mollit non deserunt
+                      ullamco est sit aliqua dolor do amet sint.
+                    </div>
+                    <div className={styles.travaller_body_text}>
+                      <p>$100
+                        <b className={styles.textmuted}>/ Day</b>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className={styles.travaller_body}>
+                  <div className={styles.travaller_body_date_row} >
+                    <div className={styles.travaller_body_date}>
+                      <Link href={''}>
+                        4 Jun - 6 Jun
+                      </Link>
+                    </div>
+                    <div className={styles.travaller_body_bookmark}>
+                      <Image src={iconBookmark} alt="Bookmark icon" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className={styles.travaller_col}>
+              <div className={styles.travaller_content}>
+                <div className={styles.travaller_header}>
+                  <div className={styles.travaller_user_image}>
+                    <Image
+                      src="/img/user7.png"
+                      alt="name"
+                      width={48}
+                      height={48}></Image>
+                  </div>
+                  <div className={styles.travaller_user_details}>
+                    <h4>Winter Gilbert </h4>
+                    <p className={styles.textmuted} style={{ fontSize: "12px", paddingTop: "2px" }}>March 24, 2020</p>
+                  </div>
+                  <div className={styles.travaller_user_rate}>
+                    <Button
+                      startIcon={<Image src={iconUser} alt="User icon" />}>
+                      2.0
+                    </Button>
+                  </div>
+                </div>
+                <div className={styles.traval_content}>
+                  <div className={styles.traval_content_col} >
+                    <div className={styles.travaller_body_text}>
+                    Red wood hotel
+                    </div>
+                    <div className={styles.travel_finding_partner}>
+                      Finding Partner
+                    </div>
+                    <div className={styles.travel_desc} >
+                      Amet minim mollit non deserunt
+                      ullamco est sit aliqua dolor do amet sint.
+                    </div>
+                    <div className={styles.travaller_body_text}>
+                      <p>$100
+                        <b className={styles.textmuted}>/ Day</b>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className={styles.travaller_body}>
+                  <div className={styles.travaller_body_date_row} >
+                    <div className={styles.travaller_body_date}>
+                      <Link href={''}>
+                        4 Jun - 6 Jun
+                      </Link>
+                    </div>
+                    <div className={styles.travaller_body_bookmark}>
+                      <Image src={iconBookmark} alt="Bookmark icon" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className={styles.travaller_col}>
+              <div className={styles.travaller_content}>
+                <div className={styles.travaller_header}>
+                  <div className={styles.travaller_user_image}>
+                    <Image
+                      src="/img/user8.png"
+                      alt="name"
+                      width={48}
+                      height={48}></Image>
+                  </div>
+                  <div className={styles.travaller_user_details}>
+                    <h4>Elsie Lindsey </h4>
+                    <p className={styles.textmuted} style={{ fontSize: "12px", paddingTop: "2px" }}>March 24, 2020</p>
+                  </div>
+                  <div className={styles.travaller_user_rate}>
+                    <Button
+                      startIcon={<Image src={iconUser} alt="User icon" />}>
+                      2.0
+                    </Button>
+                  </div>
+                </div>
+                <div className={styles.traval_content}>
+                  <div className={styles.traval_content_col} >
+                    <div className={styles.travaller_body_text}>
+                    Obsidian Bay Hotel
                     </div>
                     <div className={styles.travel_finding_partner}>
                       Finding Partner
@@ -434,7 +542,7 @@ export default function Home() {
                       height={48}></Image>
                   </div>
                   <div className={styles.travaller_user_details}>
-                    <h4>Sonya Clarke </h4>
+                    <h4>Aliyah Bailey </h4>
                     <p className={styles.textmuted} style={{ fontSize: "12px", paddingTop: "2px" }}>March 24, 2020</p>
                   </div>
                   <div className={styles.travaller_user_rate}>
@@ -447,115 +555,7 @@ export default function Home() {
                 <div className={styles.traval_content}>
                   <div className={styles.traval_content_col} >
                     <div className={styles.travaller_body_text}>
-                      Hilton Miami Downtowss
-                    </div>
-                    <div className={styles.travel_finding_partner}>
-                      Finding Partner
-                    </div>
-                    <div className={styles.travel_desc} >
-                      Amet minim mollit non deserunt
-                      ullamco est sit aliqua dolor do amet sint.
-                    </div>
-                    <div className={styles.travaller_body_text}>
-                      <p>$100
-                        <b className={styles.textmuted}>/ Day</b>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className={styles.travaller_body}>
-                  <div className={styles.travaller_body_date_row} >
-                    <div className={styles.travaller_body_date}>
-                      <Link href={''}>
-                        4 Jun - 6 Jun
-                      </Link>
-                    </div>
-                    <div className={styles.travaller_body_bookmark}>
-                      <Image src={iconBookmark} alt="Bookmark icon" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className={styles.travaller_col}>
-              <div className={styles.travaller_content}>
-                <div className={styles.travaller_header}>
-                  <div className={styles.travaller_user_image}>
-                    <Image
-                      src="/img/logregsidebar.jpg"
-                      alt="name"
-                      width={48}
-                      height={48}></Image>
-                  </div>
-                  <div className={styles.travaller_user_details}>
-                    <h4>Sonya Clarke </h4>
-                    <p className={styles.textmuted} style={{ fontSize: "12px", paddingTop: "2px" }}>March 24, 2020</p>
-                  </div>
-                  <div className={styles.travaller_user_rate}>
-                    <Button
-                      startIcon={<Image src={iconUser} alt="User icon" />}>
-                      2.0
-                    </Button>
-                  </div>
-                </div>
-                <div className={styles.traval_content}>
-                  <div className={styles.traval_content_col} >
-                    <div className={styles.travaller_body_text}>
-                      Hilton Miami Downtowss
-                    </div>
-                    <div className={styles.travel_finding_partner}>
-                      Finding Partner
-                    </div>
-                    <div className={styles.travel_desc} >
-                      Amet minim mollit non deserunt
-                      ullamco est sit aliqua dolor do amet sint.
-                    </div>
-                    <div className={styles.travaller_body_text}>
-                      <p>$100
-                        <b className={styles.textmuted}>/ Day</b>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className={styles.travaller_body}>
-                  <div className={styles.travaller_body_date_row} >
-                    <div className={styles.travaller_body_date}>
-                      <Link href={''}>
-                        4 Jun - 6 Jun
-                      </Link>
-                    </div>
-                    <div className={styles.travaller_body_bookmark}>
-                      <Image src={iconBookmark} alt="Bookmark icon" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className={styles.travaller_col}>
-              <div className={styles.travaller_content}>
-                <div className={styles.travaller_header}>
-                  <div className={styles.travaller_user_image}>
-                    <Image
-                      src="/img/logregsidebar.jpg"
-                      alt="name"
-                      width={48}
-                      height={48}></Image>
-                  </div>
-                  <div className={styles.travaller_user_details}>
-                    <h4>Sonya Clarke </h4>
-                    <p className={styles.textmuted} style={{ fontSize: "12px", paddingTop: "2px" }}>March 24, 2020</p>
-                  </div>
-                  <div className={styles.travaller_user_rate}>
-                    <Button
-                      startIcon={<Image src={iconUser} alt="User icon" />}>
-                      2.0
-                    </Button>
-                  </div>
-                </div>
-                <div className={styles.traval_content}>
-                  <div className={styles.traval_content_col} >
-                    <div className={styles.travaller_body_text}>
-                      Hilton Miami Downtowss
+                    Primal Covert Hotel
                     </div>
                     <div className={styles.travel_finding_partner}>
                       Finding Partner

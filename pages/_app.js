@@ -20,6 +20,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <StoreProvider>
       <Component {...pageProps} />
+      <div id="modal-root"></div>
     </StoreProvider>
   )
 }

@@ -12,7 +12,7 @@
   text-decoration: underline;
 }
 
-.wrapheader{
+.wrapheader {
   position: fixed;
   top: 0;
   left: 0;
@@ -31,7 +31,7 @@
   padding: 16px 3vw 0;
 }
 
-.leftheaderaccount{
+.leftheaderaccount {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -119,14 +119,14 @@
   padding-bottom: 14px;
 }
 
-.toprightloginpostbtn{
-  padding-left:15px;
-  padding-right:15px;
-  padding-top:6px;
-  padding-bottom:6px;
-  
-  margin-top:5px;
-  margin-bottom:5px;
+.toprightloginpostbtn {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+
+  margin-top: 5px;
+  margin-bottom: 5px;
 
   background: #657ADC;
   border-radius: 45px;
@@ -134,14 +134,46 @@
   color: #fff;
 }
 
-.accountmenu{
+.accountmenu {
   border-radius: 26px;
 }
 
-.toprightloginicon{
-  margin-left: -0px;  
-  margin-right: -10px;  
+.toprightloginicon {
+  margin-left: -0px;
+  margin-right: -10px;
 }
+
+.modalbody {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.modalheading {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 120%;
+  text-align: center;
+  color: #0F0F17;
+}
+
+.modalheadingtext {
+  padding-top: 10px;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  color: #696888;
+}
+
 
 
 .toprightloginpostbtn :hover {
@@ -151,7 +183,7 @@
 
 }
 
-.toprightloginpostbtn{
+.toprightloginpostbtn {
   background: #657ADC;
   border: 1px solid #657ADC;
   border-radius: 26px;
@@ -163,12 +195,12 @@
   padding-right: 15px;
 }
 
-.toprightloginpostbtn:hover{
+.toprightloginpostbtn:hover {
 
   background: #798de8 !important;
 }
 
-.toprightloginother{
+.toprightloginother {
   margin-right: 5px;
   background: #FFFFFF;
   border: 1px solid #E9E9EE;
