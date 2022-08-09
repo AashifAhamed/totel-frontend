@@ -258,6 +258,7 @@ const WrapHeaderTopLinks = () => {
 							onClose={() => setShowModalPost(false)}
 							show={showModalPost}
 							title=""
+							
 						>
 							<PostCreate />
 						</Modal>
