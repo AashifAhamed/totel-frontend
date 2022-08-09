@@ -25,6 +25,7 @@ import iconMessage from '../public/img/icon/icon-message.svg';
 import Modal from './Modal'
 import LoginRegister from './LoginRegister';
 import SendOTPCode from './SendOTPCode';
+import PostCreate from './PostCreate';
 
 
 const WrapHeaderTopLinks = () => {
@@ -32,6 +33,7 @@ const WrapHeaderTopLinks = () => {
 	const { userInfo } = state;
 	const [showModal, setShowModal] = useState(false);
 	const [showModalSignup, setShowModalSignup] = useState(false);
+	const [showModalPost, setShowModalPost] = useState(false);
 
 	const router = useRouter();
 
@@ -135,7 +137,7 @@ const WrapHeaderTopLinks = () => {
 							style={{ textTransform: 'none' }}
 							startIcon={<Image src={iconPlus} alt="Plus icon" />}
 							onClick={() => {
-								router.push('/post/new');
+								setShowModalPost(true)
 							}}>
 							Post
 						</Button>
@@ -241,7 +243,7 @@ const WrapHeaderTopLinks = () => {
 						<Modal
 							onClose={() => setShowModalSignup(false)}
 							show={showModalSignup}
-							title="sign up"
+							title="Sign up"
 						>
 							<SendOTPCode  />
 						</Modal>
@@ -251,6 +253,13 @@ const WrapHeaderTopLinks = () => {
 							title="Log in or sign up"
 						>
 							<LoginRegister whichPage='login' />
+						</Modal>
+						<Modal
+							onClose={() => setShowModalPost(false)}
+							show={showModalPost}
+							title=""
+						>
+							<PostCreate />
 						</Modal>
 						
 					</div>

@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 import iconCross from '../public/img/icon/icon-cross.svg';
 
-const Modal = ({ show, onClose, children, title }) => {
+const Modal = ({ show, onClose, children, title,topMargin }) => {
   const [isBrowser, setIsBrowser] = useState(false);
 
   useEffect(() => {

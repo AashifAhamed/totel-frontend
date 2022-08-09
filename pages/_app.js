@@ -5,6 +5,8 @@ import { StoreProvider } from '../utils/StoreUtils/Store.js';
 import { createFirebaseApp } from '../components/FireBase'
 
 import '../styles/globals.css'
+import 'react-date-range/dist/styles.css'; // main style file
+import 'react-date-range/dist/theme/default.css'; // theme css file
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
