@@ -24,12 +24,14 @@ import iconMessage from '../public/img/icon/icon-message.svg';
 
 import Modal from './Modal'
 import LoginRegister from './LoginRegister';
+import SendOTPCode from './SendOTPCode';
 
 
 const WrapHeaderTopLinks = () => {
 	const { state, dispatch } = useContext(Store);
 	const { userInfo } = state;
-	const [showModal, setShowModal, showModalSignup, setShowModalSignup] = useState(false);
+	const [showModal, setShowModal] = useState(false);
+	const [showModalSignup, setShowModalSignup] = useState(false);
 
 	const router = useRouter();
 
@@ -220,7 +222,7 @@ const WrapHeaderTopLinks = () => {
 							transformOrigin={{ horizontal: 'right', vertical: 'top' }}
 							anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}>
 							<MenuItem>
-								<Link href={''}><span onClick={() => setShowModal(true)}>Signup</span></Link>
+								<Link href={''}><span onClick={() => setShowModalSignup(true)}>Signup</span></Link>
 							</MenuItem>
 							<MenuItem>
 								<Link href={''} ><span onClick={() => setShowModal(true)}>Login</span></Link>
@@ -237,11 +239,11 @@ const WrapHeaderTopLinks = () => {
 							</MenuItem>
 						</Menu>
 						<Modal
-							onClose={() => setShowModal(false)}
-							show={showModal}
+							onClose={() => setShowModalSignup(false)}
+							show={showModalSignup}
 							title="sign up"
 						>
-							<LoginRegister whichPage='login' />
+							<SendOTPCode  />
 						</Modal>
 						<Modal
 							onClose={() => setShowModal(false)}
