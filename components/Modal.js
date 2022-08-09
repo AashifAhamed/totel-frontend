@@ -68,6 +68,8 @@ const StyledModal = styled.div`
   margin-top: 150px;
   border-radius: 20px;
   padding: 15px;
+  z-index: 1;
+  drop-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 `;
 const StyledModalOverlay = styled.div`
   position: absolute;
