@@ -227,7 +227,7 @@ const PostCreate = ({ }) => {
 					<div className={styles.logregformbuttons}>
 						<Button
 							variant="contained"
-							sx={{ width:'100%',height: '55px', fontSize: '16px' }}>
+							sx={{ width:'100%',height: '55px', fontSize: '16px' ,textDecoration:'none'}}>
 							Post it
 						</Button>
 					</div>
