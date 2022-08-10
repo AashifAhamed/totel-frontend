@@ -26,6 +26,7 @@ import Modal from './Modal'
 import LoginRegister from './LoginRegister';
 import SendOTPCode from './SendOTPCode';
 import PostCreate from './PostCreate';
+import RequestList from './RequestList';
 
 
 const WrapHeaderTopLinks = () => {
@@ -34,6 +35,7 @@ const WrapHeaderTopLinks = () => {
 	const [showModal, setShowModal] = useState(false);
 	const [showModalSignup, setShowModalSignup] = useState(false);
 	const [showModalPost, setShowModalPost] = useState(false);
+	const [showModalRequest, setShowModalRequest] = useState(false);
 
 	const router = useRouter();
 
@@ -154,17 +156,15 @@ const WrapHeaderTopLinks = () => {
 							className={styles.toprightloginicon}
 							style={{ textTransform: 'none' }}
 							startIcon={<Image src={iconMessage} alt="Message icon" />}
-							onClick={() => {
-								router.push('/message');
-							}}>
+							onClick={() => setShowModalRequest(true)}
+						>
 						</Button>
 						<Button
 							className={styles.toprightloginicon}
 							style={{ textTransform: 'none' }}
 							startIcon={<Image src={iconBell} alt="Bell icon" />}
-							onClick={() => {
-								router.push('/notification');
-							}}>
+							onClick={() => setShowModalRequest(true)}
+							>
 						</Button>
 						<Box
 							sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
@@ -261,6 +261,14 @@ const WrapHeaderTopLinks = () => {
 							
 						>
 							<PostCreate />
+						</Modal>
+						<Modal
+							onClose={() => setShowModalRequest(false)}
+							show={showModalRequest}
+							title=""
+							
+						>
+							<RequestList />
 						</Modal>
 						
 					</div>
