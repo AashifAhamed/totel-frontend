@@ -38,7 +38,7 @@ export default function Traveller() {
               post_img={'/img/image4.png'}
               post_name={'Hilton Miami Downtowss'}
               date_range={'4 Jun - 6 Jun'}
-              rating={'2.0'}
+              rating={'1.0'}
               amount={'$90'}
             />
 
@@ -60,6 +60,52 @@ export default function Traveller() {
               post_img={'/img/image7.png'}
               post_name={'Celeste Hotel'}
               date_range={'4 Jun - 6 Jun'}
+              rating={'3.0'}
+              amount={'$90'}
+            />
+
+            <TravellerCard
+              user_name={'Vanessa Hamilton'}
+              user_img={'/img/user4.png'}
+              date={'March 24, 2020'}
+              post_img={'/img/image9.png'}
+              post_name={'Slumber Cottage'}
+              date_range={'4 Jun - 6 Jun'}
+              rating={'4.0'}
+              amount={'$90'}
+            />
+           
+          </div>
+          <div className={styles.travaller_row}>
+            <TravellerCard
+              user_name={'Sonya Clarke'}
+              user_img={'/img/user1.png'}
+              date={'March 24, 2020'}
+              post_img={'/img/image4.png'}
+              post_name={'Hilton Miami Downtowss'}
+              date_range={'4 Jun - 6 Jun'}
+              rating={'5.0'}
+              amount={'$90'}
+            />
+
+            <TravellerCard
+              user_name={'Emilio Tran'}
+              user_img={'/img/user2.png'}
+              date={'March 24, 2020'}
+              post_img={'/img/image5.png'}
+              post_name={'Vagabond Cabin'}
+              date_range={'4 Jun - 6 Jun'}
+              rating={'3.0'}
+              amount={'$90'}
+            />
+
+            <TravellerCard
+              user_name={'Dale Hanson'}
+              user_img={'/img/user3.png'}
+              date={'March 24, 2020'}
+              post_img={'/img/image7.png'}
+              post_name={'Celeste Hotel'}
+              date_range={'4 Jun - 6 Jun'}
               rating={'2.0'}
               amount={'$90'}
             />
@@ -71,7 +117,7 @@ export default function Traveller() {
               post_img={'/img/image9.png'}
               post_name={'Slumber Cottage'}
               date_range={'4 Jun - 6 Jun'}
-              rating={'2.0'}
+              rating={'1.0'}
               amount={'$90'}
             />
            
@@ -95,7 +141,7 @@ export default function Traveller() {
               post_img={'/img/image5.png'}
               post_name={'Vagabond Cabin'}
               date_range={'4 Jun - 6 Jun'}
-              rating={'2.0'}
+              rating={'3.0'}
               amount={'$90'}
             />
 
@@ -106,7 +152,7 @@ export default function Traveller() {
               post_img={'/img/image7.png'}
               post_name={'Celeste Hotel'}
               date_range={'4 Jun - 6 Jun'}
-              rating={'2.0'}
+              rating={'4.0'}
               amount={'$90'}
             />
 
@@ -117,53 +163,7 @@ export default function Traveller() {
               post_img={'/img/image9.png'}
               post_name={'Slumber Cottage'}
               date_range={'4 Jun - 6 Jun'}
-              rating={'2.0'}
-              amount={'$90'}
-            />
-           
-          </div>
-          <div className={styles.travaller_row}>
-            <TravellerCard
-              user_name={'Sonya Clarke'}
-              user_img={'/img/user1.png'}
-              date={'March 24, 2020'}
-              post_img={'/img/image4.png'}
-              post_name={'Hilton Miami Downtowss'}
-              date_range={'4 Jun - 6 Jun'}
-              rating={'2.0'}
-              amount={'$90'}
-            />
-
-            <TravellerCard
-              user_name={'Emilio Tran'}
-              user_img={'/img/user2.png'}
-              date={'March 24, 2020'}
-              post_img={'/img/image5.png'}
-              post_name={'Vagabond Cabin'}
-              date_range={'4 Jun - 6 Jun'}
-              rating={'2.0'}
-              amount={'$90'}
-            />
-
-            <TravellerCard
-              user_name={'Dale Hanson'}
-              user_img={'/img/user3.png'}
-              date={'March 24, 2020'}
-              post_img={'/img/image7.png'}
-              post_name={'Celeste Hotel'}
-              date_range={'4 Jun - 6 Jun'}
-              rating={'2.0'}
-              amount={'$90'}
-            />
-
-            <TravellerCard
-              user_name={'Vanessa Hamilton'}
-              user_img={'/img/user4.png'}
-              date={'March 24, 2020'}
-              post_img={'/img/image9.png'}
-              post_name={'Slumber Cottage'}
-              date_range={'4 Jun - 6 Jun'}
-              rating={'2.0'}
+              rating={'5.0'}
               amount={'$90'}
             />
            

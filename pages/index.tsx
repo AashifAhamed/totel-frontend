@@ -13,6 +13,7 @@ import TextField from "@mui/material/TextField";
 import WrapHeader from "../components/WrapHeader";
 import WrapFooter from "../components/WrapFooter";
 import TravellerCard from "../components/TravellerCard";
+import TravelCard from "../components/TravelCard";
 import styles from "../styles/Home.module.css";
 import { homeHotels, homeRooms, homeTrips } from "./api/data";
 import { fontSize } from "@mui/system";
@@ -156,7 +157,7 @@ export default function Home() {
               post_img={'/img/image4.png'}
               post_name={'Hilton Miami Downtowss'}
               date_range={'4 Jun - 6 Jun'}
-              rating={'2.0'}
+              rating={'1.0'}
               amount={'$90'}
             />
 
@@ -178,7 +179,7 @@ export default function Home() {
               post_img={'/img/image7.png'}
               post_name={'Celeste Hotel'}
               date_range={'4 Jun - 6 Jun'}
-              rating={'2.0'}
+              rating={'3.0'}
               amount={'$90'}
             />
 
@@ -189,10 +190,10 @@ export default function Home() {
               post_img={'/img/image9.png'}
               post_name={'Slumber Cottage'}
               date_range={'4 Jun - 6 Jun'}
-              rating={'2.0'}
+              rating={'4.0'}
               amount={'$90'}
             />
-           
+
           </div>
         </div>
         <div className={styles.section03}>
@@ -201,226 +202,50 @@ export default function Home() {
               <h3>Travel to Miami <b className={styles.textmuted} style={{ fontSize: "12px" }}>56 more</b></h3>
             </div>
             <div className={styles.title_right}>
-              <Link href={''}>View all</Link>
+              <Link href={'/travel'}>View all</Link>
             </div>
           </div>
           <div className={styles.travaller_row}>
-            <div className={styles.travaller_col}>
-              <div className={styles.travaller_content}>
-                <div className={styles.travaller_header}>
-                  <div className={styles.travaller_user_image}>
-                    <Image
-                      src="/img/user5.png"
-                      alt="name"
-                      width={48}
-                      height={48}></Image>
-                  </div>
-                  <div className={styles.travaller_user_details}>
-                    <h4>Sonya Clarke </h4>
-                    <p className={styles.textmuted} style={{ fontSize: "12px", paddingTop: "2px" }}>March 24, 2020</p>
-                  </div>
-                  <div className={styles.travaller_user_rate}>
-                    <Button
-                      startIcon={<Image src={iconUser} alt="User icon" />}>
-                      2.0
-                    </Button>
-                  </div>
-                </div>
-                <div className={styles.traval_content}>
-                  <div className={styles.traval_content_col} >
-                    <div className={styles.travaller_body_text}>
-                      Royal Galaxy Resort
-                    </div>
-                    <div className={styles.travel_finding_partner}>
-                      Finding Partner
-                    </div>
-                    <div className={styles.travel_desc} >
-                      Amet minim mollit non deserunt
-                      ullamco est sit aliqua dolor do amet sint.
-                    </div>
-                    <div className={styles.travaller_body_text}>
-                      <p>$100
-                        <b className={styles.textmuted}>/ Day</b>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className={styles.travaller_body}>
-                  <div className={styles.travaller_body_date_row} >
-                    <div className={styles.travaller_body_date}>
-                      <Link href={''}>
-                        4 Jun - 6 Jun
-                      </Link>
-                    </div>
-                    <div className={styles.travaller_body_bookmark}>
-                      <Image src={iconBookmark} alt="Bookmark icon" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className={styles.travaller_col}>
-              <div className={styles.travaller_content}>
-                <div className={styles.travaller_header}>
-                  <div className={styles.travaller_user_image}>
-                    <Image
-                      src="/img/user7.png"
-                      alt="name"
-                      width={48}
-                      height={48}></Image>
-                  </div>
-                  <div className={styles.travaller_user_details}>
-                    <h4>Winter Gilbert </h4>
-                    <p className={styles.textmuted} style={{ fontSize: "12px", paddingTop: "2px" }}>March 24, 2020</p>
-                  </div>
-                  <div className={styles.travaller_user_rate}>
-                    <Button
-                      startIcon={<Image src={iconUser} alt="User icon" />}>
-                      2.0
-                    </Button>
-                  </div>
-                </div>
-                <div className={styles.traval_content}>
-                  <div className={styles.traval_content_col} >
-                    <div className={styles.travaller_body_text}>
-                      Red wood hotel
-                    </div>
-                    <div className={styles.travel_finding_partner}>
-                      Finding Partner
-                    </div>
-                    <div className={styles.travel_desc} >
-                      Amet minim mollit non deserunt
-                      ullamco est sit aliqua dolor do amet sint.
-                    </div>
-                    <div className={styles.travaller_body_text}>
-                      <p>$100
-                        <b className={styles.textmuted}>/ Day</b>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className={styles.travaller_body}>
-                  <div className={styles.travaller_body_date_row} >
-                    <div className={styles.travaller_body_date}>
-                      <Link href={''}>
-                        4 Jun - 6 Jun
-                      </Link>
-                    </div>
-                    <div className={styles.travaller_body_bookmark}>
-                      <Image src={iconBookmark} alt="Bookmark icon" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className={styles.travaller_col}>
-              <div className={styles.travaller_content}>
-                <div className={styles.travaller_header}>
-                  <div className={styles.travaller_user_image}>
-                    <Image
-                      src="/img/user8.png"
-                      alt="name"
-                      width={48}
-                      height={48}></Image>
-                  </div>
-                  <div className={styles.travaller_user_details}>
-                    <h4>Elsie Lindsey </h4>
-                    <p className={styles.textmuted} style={{ fontSize: "12px", paddingTop: "2px" }}>March 24, 2020</p>
-                  </div>
-                  <div className={styles.travaller_user_rate}>
-                    <Button
-                      startIcon={<Image src={iconUser} alt="User icon" />}>
-                      2.0
-                    </Button>
-                  </div>
-                </div>
-                <div className={styles.traval_content}>
-                  <div className={styles.traval_content_col} >
-                    <div className={styles.travaller_body_text}>
-                      Obsidian Bay Hotel
-                    </div>
-                    <div className={styles.travel_finding_partner}>
-                      Finding Partner
-                    </div>
-                    <div className={styles.travel_desc} >
-                      Amet minim mollit non deserunt
-                      ullamco est sit aliqua dolor do amet sint.
-                    </div>
-                    <div className={styles.travaller_body_text}>
-                      <p>$100
-                        <b className={styles.textmuted}>/ Day</b>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className={styles.travaller_body}>
-                  <div className={styles.travaller_body_date_row} >
-                    <div className={styles.travaller_body_date}>
-                      <Link href={''}>
-                        4 Jun - 6 Jun
-                      </Link>
-                    </div>
-                    <div className={styles.travaller_body_bookmark}>
-                      <Image src={iconBookmark} alt="Bookmark icon" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className={styles.travaller_col}>
-              <div className={styles.travaller_content}>
-                <div className={styles.travaller_header}>
-                  <div className={styles.travaller_user_image}>
-                    <Image
-                      src="/img/logregsidebar.jpg"
-                      alt="name"
-                      width={48}
-                      height={48}></Image>
-                  </div>
-                  <div className={styles.travaller_user_details}>
-                    <h4>Aliyah Bailey </h4>
-                    <p className={styles.textmuted} style={{ fontSize: "12px", paddingTop: "2px" }}>March 24, 2020</p>
-                  </div>
-                  <div className={styles.travaller_user_rate}>
-                    <Button
-                      startIcon={<Image src={iconUser} alt="User icon" />}>
-                      2.0
-                    </Button>
-                  </div>
-                </div>
-                <div className={styles.traval_content}>
-                  <div className={styles.traval_content_col} >
-                    <div className={styles.travaller_body_text}>
-                      Primal Covert Hotel
-                    </div>
-                    <div className={styles.travel_finding_partner}>
-                      Finding Partner
-                    </div>
-                    <div className={styles.travel_desc} >
-                      Amet minim mollit non deserunt
-                      ullamco est sit aliqua dolor do amet sint.
-                    </div>
-                    <div className={styles.travaller_body_text}>
-                      <p>$100
-                        <b className={styles.textmuted}>/ Day</b>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className={styles.travaller_body}>
-                  <div className={styles.travaller_body_date_row} >
-                    <div className={styles.travaller_body_date}>
-                      <Link href={''}>
-                        4 Jun - 6 Jun
-                      </Link>
-                    </div>
-                    <div className={styles.travaller_body_bookmark}>
-                      <Image src={iconBookmark} alt="Bookmark icon" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <TravelCard
+              user_name={'Sonya Clarke'}
+              user_img={'/img/user5.png'}
+              post_name={'Royal Galaxy Resort'}
+              date_range={'4 Jun - 6 Jun'}
+              rating={'5.0'}
+              amount={'$90'}
+              description={'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.'}
+            />
+
+            <TravelCard
+              user_name={'Winter Gilbert'}
+              user_img={'/img/user7.png'}
+              post_name={'Red wood hotel'}
+              date_range={'4 Jun - 6 Jun'}
+              rating={'1.0'}
+              amount={'$100'}
+              description={'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.'}
+            />
+
+            <TravelCard
+              user_name={'Elsie Lindsey'}
+              user_img={'/img/user8.png'}
+              post_name={'Obsidian Bay Hotel'}
+              date_range={'4 Jun - 6 Jun'}
+              rating={'2.0'}
+              amount={'$100'}
+              description={'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.'}
+            />
+
+            <TravelCard
+              user_name={'Aliyah Bailey'}
+              user_img={'/img/user9.png'}
+              post_name={'Primal Covert Hotel'}
+              date_range={'4 Jun - 6 Jun'}
+              rating={'3.0'}
+              amount={'$100'}
+              description={'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.'}
+            />
+           
           </div>
         </div>
         {/* Section 4 */}

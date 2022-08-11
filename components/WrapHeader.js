@@ -50,28 +50,12 @@ const WrapHeader = () => {
 			<VerifyWarning />
 			<div className={styles.topheader}>
 				<div className={styles.topleft}>
-					<h1 className={styles.sitelogo}>
+					<h1 className={styles.sitelogo} href={'/'}>
 						<Image src="/img/logo.png" alt="logo" width={117} height={40} />
 					</h1>
 					<div className={styles.location}>
 						<HomeLocation whichComponent="WrapHeader" />
 					</div>
-
-					{/* <div className={styles.searchbox}>
-						<form className={styles.searchform}>
-							<TextField
-								fullWidth
-								label="Where are you going?"
-								name="searchValue"
-								onChange={(e) => setSearchValue(e.target.value)}
-								style={{ height: 15 }}
-								value={searchValue}
-							/>
-							<button className={styles.searchbutton} type="submit" />
-						</form>
-					</div> */}
-
-
 				</div>
 				{/* END: <div className={styles.topleft}> */}
 

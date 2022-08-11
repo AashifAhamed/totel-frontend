@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from '../styles/TravellerCard.module.css';
+import styles from '../styles/TravelCard.module.css';
 
 import Image from "next/image";
 import Button from "@mui/material/Button";
@@ -8,9 +8,8 @@ import Link from "next/link";
 import iconUser from '../public/img/icon/icon-user-alt.svg';
 import iconBookmark from '../public/img/icon/icon-rebon.svg';
 
-const TravellerCard = ({ user_name, date, post_name, post_img, user_img, rating, date_range, amount }) => {
+const TravelCard = ({ user_name, post_name,user_img, rating, date_range, amount,description }) => {
   
-  //console.log(rating);
   let rating_color = '';
   if(parseInt(rating) == 5){
     rating_color = '#1A8F3A';
@@ -23,7 +22,7 @@ const TravellerCard = ({ user_name, date, post_name, post_img, user_img, rating,
   }else{
     rating_color = '#E96244';
   }
-
+  
   return (
     <div className={styles.travaller_col}>
       <div className={styles.travaller_content}>
@@ -37,43 +36,44 @@ const TravellerCard = ({ user_name, date, post_name, post_img, user_img, rating,
           </div>
           <div className={styles.travaller_user_details}>
             <h4>{user_name} </h4>
-            <p className={styles.textmuted} style={{ fontSize: "12px", paddingTop: "2px" }}>{date}</p>
+            <p className={styles.textmuted} style={{ fontSize: "12px", paddingTop: "2px" }}>March 24, 2020</p>
           </div>
-          <div className={styles.travaller_user_rate} >
+          <div className={styles.travaller_user_rate}>
             <Button
-             style={{"backgroundColor":rating_color}}
+              style={{"backgroundColor":rating_color}}
               startIcon={<Image src={iconUser} alt="User icon" />}>
               {rating}
             </Button>
           </div>
         </div>
-        <div className={styles.travaller_image}>
-          <Image
-            src={post_img}
-            alt="name"
-            width={315}
-            height={200}></Image>
+        <div className={styles.traval_content}>
+          <div className={styles.traval_content_col} >
+            <div className={styles.travaller_body_text}>
+              {post_name}
+            </div>
+            <div className={styles.travel_finding_partner}>
+              Finding Partner
+            </div>
+            <div className={styles.travel_desc} >
+              {description}
+            </div>
+            <div className={styles.travaller_body_text}>
+              <p>{amount}
+                <b className={styles.textmuted}>/ Day</b>
+              </p>
+            </div>
+          </div>
         </div>
         <div className={styles.travaller_body}>
           <div className={styles.travaller_body_date_row} >
             <div className={styles.travaller_body_date}>
               <Link href={''}>
-                {date_range}
+               {date_range}
               </Link>
             </div>
             <div className={styles.travaller_body_bookmark}>
-              <Link href={''}>
-                <span><Image src={iconBookmark} alt="Bookmark icon" /></span>
-              </Link>
+              <Image src={iconBookmark} alt="Bookmark icon" />
             </div>
-          </div>
-          <div className={styles.travaller_body_text}>
-            {post_name}
-          </div>
-          <div className={styles.travaller_body_text}>
-            <p>{amount}
-              <b className={styles.textmuted}>/ Day</b>
-            </p>
           </div>
         </div>
       </div>
@@ -81,4 +81,4 @@ const TravellerCard = ({ user_name, date, post_name, post_img, user_img, rating,
   );
 };
 
-export default TravellerCard;
+export default TravelCard;

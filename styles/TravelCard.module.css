@@ -101,3 +101,31 @@
 	color: #292D32;
 	padding-bottom: 5px;
   }
+
+  .traval_content_col {
+	background: #FFFFFF;
+	/* Soap */
+	margin: 10px;
+	padding: 15px;
+	border: 1px solid #E9E9EE;
+	border-radius: 12px;
+  }
+  
+  .travel_finding_partner {
+	background: #F26465;
+	border-radius: 33px;
+	padding: 5px 10px;
+	width: fit-content;
+	color: #FFFFFF;
+	font-size: 12px;
+  }
+  
+  .travel_desc {
+	color: #696888;
+	font-size: 14px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	width: inherit;
+  }
+  
+  
