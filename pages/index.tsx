@@ -12,6 +12,7 @@ import TextField from "@mui/material/TextField";
 
 import WrapHeader from "../components/WrapHeader";
 import WrapFooter from "../components/WrapFooter";
+import TravellerCard from "../components/TravellerCard";
 import styles from "../styles/Home.module.css";
 import { homeHotels, homeRooms, homeTrips } from "./api/data";
 import { fontSize } from "@mui/system";
@@ -144,219 +145,54 @@ export default function Home() {
               <h3>Traveller in Miami <b className={styles.textmuted} style={{ fontSize: "12px" }}>56 more</b></h3>
             </div>
             <div className={styles.title_right}>
-              <Link href={''}>View all</Link>
+              <Link href={'/traveller'}>View all</Link>
             </div>
           </div>
           <div className={styles.travaller_row}>
+            <TravellerCard
+              user_name={'Sonya Clarke'}
+              user_img={'/img/user1.png'}
+              date={'March 24, 2020'}
+              post_img={'/img/image4.png'}
+              post_name={'Hilton Miami Downtowss'}
+              date_range={'4 Jun - 6 Jun'}
+              rating={'2.0'}
+              amount={'$90'}
+            />
 
-            <div className={styles.travaller_col}>
-              <div className={styles.travaller_content}>
-                <div className={styles.travaller_header}>
-                  <div className={styles.travaller_user_image}>
-                    <Image
-                      src="/img/user1.png"
-                      alt="name"
-                      width={48}
-                      height={48}></Image>
-                  </div>
-                  <div className={styles.travaller_user_details}>
-                    <h4>Sonya Clarke </h4>
-                    <p className={styles.textmuted} style={{ fontSize: "12px", paddingTop: "2px" }}>March 24, 2020</p>
-                  </div>
-                  <div className={styles.travaller_user_rate}>
-                    <Button
-                      startIcon={<Image src={iconUser} alt="User icon" />}>
-                      2.0
-                    </Button>
-                  </div>
-                </div>
-                <div className={styles.travaller_image}>
-                  <Image
-                    src="/img/image4.png"
-                    alt="name"
-                    width={315}
-                    height={200}></Image>
-                </div>
-                <div className={styles.travaller_body}>
-                  <div className={styles.travaller_body_date_row} >
-                    <div className={styles.travaller_body_date}>
-                      <Link href={''}>
-                        4 Jun - 6 Jun
-                      </Link>
-                    </div>
-                    <div className={styles.travaller_body_bookmark}>
-                      <Link href={''}>
-                        <span><Image src={iconBookmark} alt="Bookmark icon" /></span>
-                      </Link>
-                    </div>
-                  </div>
-                  <div className={styles.travaller_body_text}>
-                    Hilton Miami Downtowss
-                  </div>
-                  <div className={styles.travaller_body_text}>
-                    <p>$100
-                      <b className={styles.textmuted}>/ Day</b>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className={styles.travaller_col}>
-              <div className={styles.travaller_content}>
-                <div className={styles.travaller_header}>
-                  <div className={styles.travaller_user_image}>
-                    <Image
-                      src="/img/user2.png"
-                      alt="name"
-                      width={48}
-                      height={48}></Image>
-                  </div>
-                  <div className={styles.travaller_user_details}>
-                    <h4>Emilio Tran</h4>
-                    <p className={styles.textmuted} style={{ fontSize: "12px", paddingTop: "2px" }}>March 24, 2020</p>
-                  </div>
-                  <div className={styles.travaller_user_rate}>
-                    <Button
-                      startIcon={<Image src={iconUser} alt="User icon" />}>
-                      2.0
-                    </Button>
-                  </div>
-                </div>
-                <div className={styles.travaller_image}>
-                  <Image
-                    src="/img/image5.png"
-                    alt="name"
-                    width={315}
-                    height={200}></Image>
-                </div>
-                <div className={styles.travaller_body}>
-                  <div className={styles.travaller_body_date_row} >
-                    <div className={styles.travaller_body_date}>
-                      <Link href={''}>
-                        4 Jun - 6 Jun
-                      </Link>
-                    </div>
-                    <div className={styles.travaller_body_bookmark}>
-                      <Link href={''}>
-                        <span><Image src={iconBookmark} alt="Bookmark icon" /></span>
-                      </Link>
-                    </div>
-                  </div>
-                  <div className={styles.travaller_body_text}>
-                  Vagabond Cabin
-                  </div>
-                  <div className={styles.travaller_body_text}>
-                    <p>$100
-                      <b className={styles.textmuted}>/ Day</b>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className={styles.travaller_col}>
-              <div className={styles.travaller_content}>
-                <div className={styles.travaller_header}>
-                  <div className={styles.travaller_user_image}>
-                    <Image
-                      src="/img/user3.png"
-                      alt="name"
-                      width={48}
-                      height={48}></Image>
-                  </div>
-                  <div className={styles.travaller_user_details}>
-                    <h4>Dale Hanson </h4>
-                    <p className={styles.textmuted} style={{ fontSize: "12px", paddingTop: "2px" }}>March 24, 2020</p>
-                  </div>
-                  <div className={styles.travaller_user_rate}>
-                    <Button
-                      startIcon={<Image src={iconUser} alt="User icon" />}>
-                      2.0
-                    </Button>
-                  </div>
-                </div>
-                <div className={styles.travaller_image}>
-                  <Image
-                    src="/img/image7.png"
-                    alt="name"
-                    width={315}
-                    height={200}></Image>
-                </div>
-                <div className={styles.travaller_body}>
-                  <div className={styles.travaller_body_date_row} >
-                    <div className={styles.travaller_body_date}>
-                      <Link href={''}>
-                        4 Jun - 6 Jun
-                      </Link>
-                    </div>
-                    <div className={styles.travaller_body_bookmark}>
-                      <Link href={''}>
-                        <span><Image src={iconBookmark} alt="Bookmark icon" /></span>
-                      </Link>
-                    </div>
-                  </div>
-                  <div className={styles.travaller_body_text}>
-                  Celeste Hotel
-                  </div>
-                  <div className={styles.travaller_body_text}>
-                    <p>$100
-                      <b className={styles.textmuted}>/ Day</b>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className={styles.travaller_col}>
-              <div className={styles.travaller_content}>
-                <div className={styles.travaller_header}>
-                  <div className={styles.travaller_user_image}>
-                    <Image
-                      src="/img/user4.png"
-                      alt="name"
-                      width={48}
-                      height={48}></Image>
-                  </div>
-                  <div className={styles.travaller_user_details}>
-                    <h4>Vanessa Hamilton </h4>
-                    <p className={styles.textmuted} style={{ fontSize: "12px", paddingTop: "2px" }}>March 24, 2020</p>
-                  </div>
-                  <div className={styles.travaller_user_rate}>
-                    <Button
-                      startIcon={<Image src={iconUser} alt="User icon" />}>
-                      2.0
-                    </Button>
-                  </div>
-                </div>
-                <div className={styles.travaller_image}>
-                  <Image
-                    src="/img/image9.png"
-                    alt="name"
-                    width={315}
-                    height={200}></Image>
-                </div>
-                <div className={styles.travaller_body}>
-                  <div className={styles.travaller_body_date_row} >
-                    <div className={styles.travaller_body_date}>
-                      <Link href={''}>
-                        4 Jun - 6 Jun
-                      </Link>
-                    </div>
-                    <div className={styles.travaller_body_bookmark}>
-                      <Link href={''}>
-                        <span><Image src={iconBookmark} alt="Bookmark icon" /></span>
-                      </Link>
-                    </div>
-                  </div>
-                  <div className={styles.travaller_body_text}>
-                  Slumber Cottage
-                  </div>
-                  <div className={styles.travaller_body_text}>
-                    <p>$100
-                      <b className={styles.textmuted}>/ Day</b>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <TravellerCard
+              user_name={'Emilio Tran'}
+              user_img={'/img/user2.png'}
+              date={'March 24, 2020'}
+              post_img={'/img/image5.png'}
+              post_name={'Vagabond Cabin'}
+              date_range={'4 Jun - 6 Jun'}
+              rating={'2.0'}
+              amount={'$90'}
+            />
+
+            <TravellerCard
+              user_name={'Dale Hanson'}
+              user_img={'/img/user3.png'}
+              date={'March 24, 2020'}
+              post_img={'/img/image7.png'}
+              post_name={'Celeste Hotel'}
+              date_range={'4 Jun - 6 Jun'}
+              rating={'2.0'}
+              amount={'$90'}
+            />
+
+            <TravellerCard
+              user_name={'Vanessa Hamilton'}
+              user_img={'/img/user4.png'}
+              date={'March 24, 2020'}
+              post_img={'/img/image9.png'}
+              post_name={'Slumber Cottage'}
+              date_range={'4 Jun - 6 Jun'}
+              rating={'2.0'}
+              amount={'$90'}
+            />
+           
           </div>
         </div>
         <div className={styles.section03}>
@@ -393,7 +229,7 @@ export default function Home() {
                 <div className={styles.traval_content}>
                   <div className={styles.traval_content_col} >
                     <div className={styles.travaller_body_text}>
-                    Royal Galaxy Resort
+                      Royal Galaxy Resort
                     </div>
                     <div className={styles.travel_finding_partner}>
                       Finding Partner
@@ -447,7 +283,7 @@ export default function Home() {
                 <div className={styles.traval_content}>
                   <div className={styles.traval_content_col} >
                     <div className={styles.travaller_body_text}>
-                    Red wood hotel
+                      Red wood hotel
                     </div>
                     <div className={styles.travel_finding_partner}>
                       Finding Partner
@@ -501,7 +337,7 @@ export default function Home() {
                 <div className={styles.traval_content}>
                   <div className={styles.traval_content_col} >
                     <div className={styles.travaller_body_text}>
-                    Obsidian Bay Hotel
+                      Obsidian Bay Hotel
                     </div>
                     <div className={styles.travel_finding_partner}>
                       Finding Partner
@@ -555,7 +391,7 @@ export default function Home() {
                 <div className={styles.traval_content}>
                   <div className={styles.traval_content_col} >
                     <div className={styles.travaller_body_text}>
-                    Primal Covert Hotel
+                      Primal Covert Hotel
                     </div>
                     <div className={styles.travel_finding_partner}>
                       Finding Partner
@@ -658,7 +494,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        
+
       </main>
 
       <WrapFooter />

@@ -71,6 +71,7 @@ const StyledModal = styled.div`
   z-index: 1;
   drop-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 `;
+
 const StyledModalOverlay = styled.div`
   position: absolute;
   top: 0;
