@@ -159,6 +159,7 @@ export default function Home() {
               date_range={'4 Jun - 6 Jun'}
               rating={'1.0'}
               amount={'$90'}
+              gender={'male'}
             />
 
             <TravellerCard
@@ -170,6 +171,7 @@ export default function Home() {
               date_range={'4 Jun - 6 Jun'}
               rating={'2.0'}
               amount={'$90'}
+              gender={'male/female'}
             />
 
             <TravellerCard
@@ -181,6 +183,7 @@ export default function Home() {
               date_range={'4 Jun - 6 Jun'}
               rating={'3.0'}
               amount={'$90'}
+              gender={'male'}
             />
 
             <TravellerCard
@@ -192,6 +195,7 @@ export default function Home() {
               date_range={'4 Jun - 6 Jun'}
               rating={'4.0'}
               amount={'$90'}
+              gender={'female'}
             />
 
           </div>
@@ -241,7 +245,7 @@ export default function Home() {
               user_img={'/img/user9.png'}
               post_name={'Primal Covert Hotel'}
               date_range={'4 Jun - 6 Jun'}
-              rating={'3.0'}
+              rating={'2.0'}
               amount={'$100'}
               description={'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.'}
             />

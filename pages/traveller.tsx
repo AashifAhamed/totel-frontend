@@ -40,6 +40,7 @@ export default function Traveller() {
               date_range={'4 Jun - 6 Jun'}
               rating={'1.0'}
               amount={'$90'}
+              gender={'male'}
             />
 
             <TravellerCard
@@ -51,6 +52,7 @@ export default function Traveller() {
               date_range={'4 Jun - 6 Jun'}
               rating={'2.0'}
               amount={'$90'}
+              gender={'female'}
             />
 
             <TravellerCard
@@ -62,6 +64,7 @@ export default function Traveller() {
               date_range={'4 Jun - 6 Jun'}
               rating={'3.0'}
               amount={'$90'}
+              gender={'male/female'}
             />
 
             <TravellerCard
@@ -73,6 +76,7 @@ export default function Traveller() {
               date_range={'4 Jun - 6 Jun'}
               rating={'4.0'}
               amount={'$90'}
+              gender={'female'}
             />
            
           </div>
@@ -86,6 +90,7 @@ export default function Traveller() {
               date_range={'4 Jun - 6 Jun'}
               rating={'5.0'}
               amount={'$90'}
+              gender={'female'}
             />
 
             <TravellerCard
@@ -97,6 +102,7 @@ export default function Traveller() {
               date_range={'4 Jun - 6 Jun'}
               rating={'3.0'}
               amount={'$90'}
+              gender={'female'}
             />
 
             <TravellerCard
@@ -108,6 +114,7 @@ export default function Traveller() {
               date_range={'4 Jun - 6 Jun'}
               rating={'2.0'}
               amount={'$90'}
+              gender={'female'}
             />
 
             <TravellerCard
@@ -119,6 +126,7 @@ export default function Traveller() {
               date_range={'4 Jun - 6 Jun'}
               rating={'1.0'}
               amount={'$90'}
+              gender={'male'}
             />
            
           </div>
@@ -132,6 +140,7 @@ export default function Traveller() {
               date_range={'4 Jun - 6 Jun'}
               rating={'2.0'}
               amount={'$90'}
+              gender={'male'}
             />
 
             <TravellerCard
@@ -143,6 +152,7 @@ export default function Traveller() {
               date_range={'4 Jun - 6 Jun'}
               rating={'3.0'}
               amount={'$90'}
+              gender={'male'}
             />
 
             <TravellerCard
@@ -154,6 +164,7 @@ export default function Traveller() {
               date_range={'4 Jun - 6 Jun'}
               rating={'4.0'}
               amount={'$90'}
+              gender={'male/female'}
             />
 
             <TravellerCard
@@ -164,7 +175,8 @@ export default function Traveller() {
               post_name={'Slumber Cottage'}
               date_range={'4 Jun - 6 Jun'}
               rating={'5.0'}
-              amount={'$90'}
+              amount={'$90'}             
+              gender={'male'}
             />
            
           </div>
