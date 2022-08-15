@@ -136,7 +136,7 @@ const WrapHeaderTopLinks = () => {
 					<div className={styles.leftheaderaccount}>
 						<Button
 							className={styles.toprightloginpostbtn}
-							style={{ textTransform: 'none' }}
+							style={{ textTransform: 'none',borderRadius:'22px' }}
 							startIcon={<Image src={iconPlus} alt="Plus icon" />}
 							onClick={() => {
 								setShowModalPost(true)
