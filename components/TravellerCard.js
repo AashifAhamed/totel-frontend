@@ -142,7 +142,12 @@ const TravellerCard = ({ user_name, date, post_name, post_img, user_img, rating,
               </Link>
             </div>
           </div>
-          <div className={styles.travaller_body_text}>
+          <div 
+          className={styles.travaller_body_text}
+          onClick={() => 
+            window.open('/post')
+              }
+          >
             {post_name}
           </div>
           <div className={styles.travaller_body_text}>
