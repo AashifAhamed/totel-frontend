@@ -48,7 +48,11 @@ const TravelCard = ({ user_name, post_name,user_img, rating, date_range, amount,
         </div>
         <div className={styles.traval_content}>
           <div className={styles.traval_content_col} >
-            <div className={styles.travaller_body_text}>
+            <div className={styles.travaller_body_text}
+            onClick={() => 
+              window.open('/post-travel')
+                }
+            >
               {post_name}
             </div>
             <div className={styles.travel_finding_partner}>
