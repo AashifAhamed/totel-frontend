@@ -46,7 +46,7 @@ export default function Travel() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Metoospace | Travel</title>
+        <title>Totel | Travel</title>
         <meta name='description' content='Best Spaces in the Universe.' />
       </Head>
 

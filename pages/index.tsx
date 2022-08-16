@@ -68,7 +68,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Metoospace | Home</title>
+        <title>Totel | Home</title>
         <meta name='description' content='Best Spaces in the Universe.' />
       </Head>
 

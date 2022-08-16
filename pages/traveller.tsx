@@ -12,7 +12,7 @@ export default function Traveller() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Metoospace | Traveller</title>
+        <title>Totel | Traveller</title>
         <meta name='description' content='Best Spaces in the Universe.' />
       </Head>
 
