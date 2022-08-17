@@ -21,17 +21,30 @@ const HomeLocation = ({ whichComponent }) => {
 
 	// BEGIN CODE: Location in top right: open/close effect
 	const [anchorElLocation, setAnchorElLocation] = useState(null);
+	const [locationUnit, setLocationUnit] = useState('Miami,Florida');
+
+	const [locations, setLocations] = useState([
+		{ key: 'miami', name: 'Miami,Florida' },
+		{ key: 'new-york', name: 'New York' },
+		{ key: 'califonia', name: 'Califonia' },
+	]);
+	
 	const openLocation = Boolean(anchorElLocation);
 	const handleClickLocation = (e) => {
+		console.log(e.currentTarget)
 		setAnchorElLocation(e.currentTarget);
 	};
+
 	const handleCloseLocation = () => {
 		setAnchorElLocation(null);
 	};
 	// END CODE: Location in top right: open/close effect
 
+	const handleChangeLocation = (location) => {
+		setLocationUnit(location.name)
+	};
+
 	// BEGIN CODE: TEST DATA
-	const locationUnit = 'Miami,Florida';
 	const ratingUnit = 'Rating 4.0 +';
 	// END CODE: TEST DATA
 
@@ -72,8 +85,17 @@ const HomeLocation = ({ whichComponent }) => {
 						horizontal: 'right',
 						vertical: WrapHeaderComponent ? 'bottom' : 'top',
 					}}>
-					<MenuItem>New York</MenuItem>
-					<MenuItem>Califonia</MenuItem>
+						{locations.map((location, index) => (
+							<MenuItem key={index} onClick={() => handleChangeLocation(location)}>
+								<Box
+									sx={{
+										width: 160,
+									}}
+								>
+								{location.name}
+								</Box>
+							</MenuItem>
+						))}				
 				</Menu>
 			</div>
 			{/* END CODE: Location in top right: open/close effect */}
