@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -53,17 +53,56 @@ function a11yProps(index: Number) {
 // END: Quick search Tabs of Hostels / Rooms / Tours
 
 export default function Home() {
-  // BEGIN: Quick search Tabs of Hostels / Rooms / Tours
-  const [quickTabValue, setQuickTabValue] = React.useState(0);
 
-  const handleChangeQuickTab = (event: any, newValue: any) => {
-    setQuickTabValue(newValue);
-  };
-  // END: Quick search Tabs of Hostels / Rooms / Tours
+  // const [traveller_data, setPosts] = useState([]);
 
-  // BEGIN: News Letter
-  const [newsLetter, setNewsLetter] = useState("");
-  // END: News Letter
+  // const fetchData = () => {
+  //     fetch('https://metoospace.herokuapp.com/api/v1/post?loc=1&s=post&sort=ASC&page=1&limit=1').then((response) => {
+  //       return response.json();
+  //     }).then((data) => {
+  //       console.log(data);
+
+  //       setPosts(data);
+  //     })
+  //   }
+
+  // useEffect(() => {
+  //     fetchData();
+  // } , []);
+
+
+  const traveller_data = [
+    {
+      id: '1',
+      name: 'Hilton Miami Downtowss',
+      overview: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.',
+      rate: '4',
+      price: '$78',
+      attachments: ['/img/image1.png', '/img/image2.png', '/img/image3.png'],
+      user: {
+        id: '1',
+        first_name: 'Sonya',
+        last_name: 'Clarke',
+        username: 'sonya@mail.com',
+        email: '',
+        password: '',
+        native: '',
+        bio: '',
+        occupation: '',
+        avatar: '/img/user1.png',
+        gender: 'male',
+        created_at: '',
+        updated_at: ''
+      },
+      location: {
+        id: 1,
+        name: "Miami",
+        latitude: "87454894",
+        longitude: "4654464"
+      }
+    }
+  ]
+
 
   return (
     <div className={styles.container}>
@@ -249,7 +288,7 @@ export default function Home() {
               amount={'$100'}
               description={'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.'}
             />
-           
+
           </div>
         </div>
         {/* Section 4 */}
