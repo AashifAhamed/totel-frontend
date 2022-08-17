@@ -21,87 +21,25 @@ import { fontSize } from "@mui/system";
 import iconUser from '../public/img/icon/icon-user-alt.svg';
 import iconBookmark from '../public/img/icon/icon-rebon.svg';
 import iconPlay from '../public/img/icon/icon-big-play.svg';
-// BEGIN: Quick search Tabs of Hostels / Rooms / Tours
-function TabPanel(props: any) {
-  const { children, value, index, ...other } = props;
 
-  return (
-    <div
-      role='tabpanel'
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
-    >
-      {value === index && <>{children}</>}
-    </div>
-  );
-}
+export const getStaticProps = async () => {
+ 
+  // Fetching data from jsonplaceholder.
+  const res = await fetch(
+    'https://metoospace.herokuapp.com/api/v1/post');
+  let allPosts = await res.json();
 
-TabPanel.propTypes = {
-  children: PropTypes.node,
-  index: PropTypes.number.isRequired,
-  value: PropTypes.number.isRequired,
-};
-
-function a11yProps(index: Number) {
+  // Sending fetched data to the page component via props.
   return {
-    id: `simple-tab-${index}`,
-    "aria-controls": `simple-tabpanel-${index}`,
-  };
-}
-// END: Quick search Tabs of Hostels / Rooms / Tours
-
-export default function Home() {
-
-  // const [traveller_data, setPosts] = useState([]);
-
-  // const fetchData = () => {
-  //     fetch('https://metoospace.herokuapp.com/api/v1/post?loc=1&s=post&sort=ASC&page=1&limit=1').then((response) => {
-  //       return response.json();
-  //     }).then((data) => {
-  //       console.log(data);
-
-  //       setPosts(data);
-  //     })
-  //   }
-
-  // useEffect(() => {
-  //     fetchData();
-  // } , []);
-
-
-  const traveller_data = [
-    {
-      id: '1',
-      name: 'Hilton Miami Downtowss',
-      overview: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.',
-      rate: '4',
-      price: '$78',
-      attachments: ['/img/image1.png', '/img/image2.png', '/img/image3.png'],
-      user: {
-        id: '1',
-        first_name: 'Sonya',
-        last_name: 'Clarke',
-        username: 'sonya@mail.com',
-        email: '',
-        password: '',
-        native: '',
-        bio: '',
-        occupation: '',
-        avatar: '/img/user1.png',
-        gender: 'male',
-        created_at: '',
-        updated_at: ''
-      },
-      location: {
-        id: 1,
-        name: "Miami",
-        latitude: "87454894",
-        longitude: "4654464"
+      props: {
+          allPosts
       }
-    }
-  ]
+  }
+}
+
+export default function Home({ allPosts }: any) {
+
+  console.log(allPosts);
 
 
   return (
