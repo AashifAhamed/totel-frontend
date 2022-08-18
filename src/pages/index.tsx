@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -32,44 +32,23 @@ import iconUser from '../../public/img/icon/icon-user-alt.svg';
 import iconBookmark from '../../public/img/icon/icon-rebon.svg';
 import iconPlay from '../../public/img/icon/icon-big-play.svg';
 
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: 'center',
-  color: theme.palette.text.secondary,
-}));
+// // BEGIN: Quick search Tabs of Hostels / Rooms / Tours
+// function TabPanel(props: any) {
+//   const { children, value, index, ...other } = props;
 
-// BEGIN: Quick search Tabs of Hostels / Rooms / Tours
-function TabPanel(props: any) {
-  const { children, value, index, ...other } = props;
+// export const getStaticProps = async () => {
+//   // Fetching data from jsonplaceholder.
+//   const res = await fetch(
+//     'https://metoospace.herokuapp.com/api/v1/post');
+//   let allPosts = await res.json();
 
-  return (
-    <div
-      role='tabpanel'
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
-    >
-      {value === index && <>{children}</>}
-    </div>
-  );
-}
-
-TabPanel.propTypes = {
-  children: PropTypes.node,
-  index: PropTypes.number.isRequired,
-  value: PropTypes.number.isRequired,
-};
-
-function a11yProps(index: Number) {
-  return {
-    id: `simple-tab-${index}`,
-    "aria-controls": `simple-tabpanel-${index}`,
-  };
-}
-// END: Quick search Tabs of Hostels / Rooms / Tours
+//   // Sending fetched data to the page component via props.
+//   return {
+//       props: {
+//           allPosts
+//       }
+//   }
+// }
 
 const typeLocationsData = [
 	{ src: '/img/image1.png', label: 'Romantic' },
@@ -86,20 +65,12 @@ const trendingLocationsData = [
 	{ src: '/img/image4.png', label: 'Boston' },
 ]
 
-export default function Home() {
+export default function Home({ allPosts }: any) {
   // BEGIN: Quick search Tabs of Hostels / Rooms / Tours
   const [quickTabValue, setQuickTabValue] = React.useState(0);
   const [locationByType, setLocationByType] = React.useState(typeLocationsData);
   const [trendingLocations, setTrendingLocations] = React.useState(trendingLocationsData);
 
-  const handleChangeQuickTab = (event: any, newValue: any) => {
-    setQuickTabValue(newValue);
-  };
-  // END: Quick search Tabs of Hostels / Rooms / Tours
-
-  // BEGIN: News Letter
-  const [newsLetter, setNewsLetter] = useState("");
-  // END: News Letter
 
   return (
     <div className={styles.container}>
@@ -471,7 +442,7 @@ export default function Home() {
               amount={'$100'}
               description={'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.'}
             />
-           
+
           </div>
         </div> */}
 
