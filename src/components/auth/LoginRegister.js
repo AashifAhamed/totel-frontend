@@ -39,7 +39,7 @@ const LoginRegister = ({ whichPage }) => {
 	const { state, dispatch } = useContext(Store);
 
 	useEffect(() => {
-		if (state.userInfo) {
+		if (state?.userInfo) {
 			router.push('/?message=You-are-logged-in');
 		}
 	}, []);

@@ -14,7 +14,7 @@ import { Hydrate } from "react-query/hydration";
 import Swal from 'sweetalert2';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-// import AppContextProvider from 'utils/app-context-provider';
+import AppContextProvider from 'utils/app-context-provider';
 import AppThemeProvider from 'utils/app-theme-provider';
 import AppStyleProvider from 'utils/app-style-provider';
 import { StoreProvider } from 'utils/StoreUtils/Store.js';

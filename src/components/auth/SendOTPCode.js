@@ -24,7 +24,7 @@ const SendOTPCode = ({whichPage}) => {
 	} = useForm();
 
 	useEffect(() => {
-		if (state.userInfo) {
+		if (state?.userInfo) {
 			router.push('/?message=You-are-logged-in');
 		}
 	}, []);

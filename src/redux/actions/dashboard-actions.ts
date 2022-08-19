@@ -6,11 +6,12 @@ import {
 } from "types/action-types/dashboard.types";
 // import jwtAxios from "services/auth/jwt-auth/jwt-auth-service";
 
-export const onGetDashboardData = () => {
+
+export const onGetWidgetsData = () => {
   return (dispatch: Dispatch<AppActions>) => {
     dispatch(fetchStart());
     // jwtAxios.jsonAxios
-    //   .get("/dashboard/academy")
+    //   .get("/dashboard/widgets")
     //   .then((data) => {
     //     if (data.status === 200) {
     //       dispatch(fetchSuccess());
@@ -24,4 +25,3 @@ export const onGetDashboardData = () => {
     //   });
   };
 };
-

@@ -13,7 +13,7 @@ import { useRouter } from "next/router";
 import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles({
-  normalTextStyle: {
+  normaltext: {
 		color: "#524d4d",
 		marginTop: '10px',
 		marginBottom: '2px',
@@ -21,7 +21,7 @@ const useStyles = makeStyles({
 		fontSize: 18,
 		fontWeight: Fonts.REGULAR,
   },	
-  absoluteTextStyle: {
+  absolutetext: {
 		position: 'absolute',
 		bottom: '13px',
 		left: '14px',
@@ -39,6 +39,8 @@ const LocationGridItem: React.FC<GridItemProps> = ({ item, textStyle }) => {
   const dispatch = useDispatch();
   const router = useRouter();
 	const classes = useStyles();
+
+	console.log('textStyle ', textStyle);
 
   return (
 		<Box 
@@ -63,7 +65,7 @@ const LocationGridItem: React.FC<GridItemProps> = ({ item, textStyle }) => {
 			<Box>			
 				<Box
 					component="h3"
-					className={textStyle == 'normal' ? classes.normalTextStyle : classes.absoluteTextStyle }
+					className={textStyle == 'normal' ? classes.normaltext : classes.absolutetext }
 					>
 					{item.label}
 				</Box>	

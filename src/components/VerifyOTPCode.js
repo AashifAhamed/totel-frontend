@@ -27,7 +27,7 @@ const VerifyOTPCode = (params) => {
 	const {redirect} = router.query; // For Example: login?redirect=/hotels&message=You-are-logged-in
 	const {state, dispatch} = useContext(Store);
 	useEffect(() => {
-		if (state.userInfo) {
+		if (state?.userInfo) {
 			router.push('/?message=You-are-logged-in');
 		}
 	}, []);

@@ -17,19 +17,19 @@ import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
 import TextField from "@mui/material/TextField";
 
+import Header from "components/header";
 import WrapHeader from "components/WrapHeader";
 import WrapFooter from "components/WrapFooter";
 import TravellerCard from "components/TravellerCard";
 import TravelCard from "components/TravelCard";
-import Locations from "modules/locations";
-import LocationGrid from "modules/location-grid/location-grid";
+import Locations from "modules/home/locations";
+import SharedRoom from "modules/home/shared-room";
+import LocationGrid from "modules/home/location-grid/location-grid";
 
 import styles from "styles/Home.module.css";
 import { homeHotels, homeRooms, homeTrips } from "./api/data";
 import { fontSize } from "@mui/system";
 
-import iconUser from '../../public/img/icon/icon-user-alt.svg';
-import iconBookmark from '../../public/img/icon/icon-rebon.svg';
 import iconPlay from '../../public/img/icon/icon-big-play.svg';
 
 // // BEGIN: Quick search Tabs of Hostels / Rooms / Tours
@@ -51,18 +51,18 @@ import iconPlay from '../../public/img/icon/icon-big-play.svg';
 // }
 
 const typeLocationsData = [
-	{ src: '/img/image1.png', label: 'Romantic' },
-	{ src: '/img/image2.png', label: 'Adventure' },
-	{ src: '/img/image3.png', label: 'Nature' },
-	{ src: '/img/image4.png', label: 'Wildlife' },
-	{ src: '/img/image5.png', label: 'Solo' },
+	{ src: '/assets/images/romantic.jpeg', label: 'Romantic' },
+	{ src: '/assets/images/adventure.jpeg', label: 'Adventure' },
+	{ src: '/assets/images/nature.jpeg', label: 'Nature' },
+	{ src: '/assets/images/wildlife.jpeg', label: 'Wildlife' },
+	{ src: '/assets/images/solo.jpeg', label: 'Solo' },
 ]
 
 const trendingLocationsData = [
-	{ src: '/img/image1.png', label: 'Miami, Florida' },
-	{ src: '/img/image2.png', label: 'California' },
-	{ src: '/img/image3.png', label: 'San Francisco' },
-	{ src: '/img/image4.png', label: 'Boston' },
+	{ src: '/assets/images/miami.jpeg', label: 'Miami, Florida' },
+	{ src: '/assets/images/california.jpeg', label: 'California' },
+	{ src: '/assets/images/san-francisco.jpeg', label: 'San Francisco' },
+	{ src: '/assets/images/boston.jpeg', label: 'Boston' },
 ]
 
 export default function Home({ allPosts }: any) {
@@ -71,457 +71,588 @@ export default function Home({ allPosts }: any) {
   const [locationByType, setLocationByType] = React.useState(typeLocationsData);
   const [trendingLocations, setTrendingLocations] = React.useState(trendingLocationsData);
 
-
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Totel | Home</title>
-        <meta name='description' content='Best Spaces in the Universe.' />
-      </Head>
+		<Box>
+			<Header/>
+			
+			<Box
+				sx={{
+					pt:20,
+					pb: 20,
+					px: 20,
+				}}
+				>
+				<SharedRoom/>
+			</Box>
 
-      <WrapHeader />
+			<Box
+				sx={{
+					pb: 15,
+					px: 20,
+				}}
+				>
+				<Box
+					component="h3"
+					sx={{
+						color: "text.primary",
+						mb: { xs: 4, sm: 4, xl: 6 },
+						fontSize: 20,
+						fontWeight: Fonts.BOLD,
+					}}
+					>
+					Find by type
+				</Box>				
 
-      <main className={styles.homemain}>
-				<div className={styles.sharedRoomSection}>
-					<div>
+				<div>
+					<Grid item xs={4} md={4}>
+						<LocationGrid locations={locationByType} responsive={{ xs: 1, sm: 3, md: 4, xl: 5 }} textStyle="normal"/>
+					</Grid>
+				</div>
+			</Box>
+
+			<Box
+				sx={{
+					pb: 15,
+					px: 20,
+				}}
+				>
+				<Box
+					component="h3"
+					sx={{
+						color: "text.primary",
+						mb: { xs: 4, sm: 4, xl: 6 },
+						fontSize: 20,
+						fontWeight: Fonts.BOLD,
+					}}
+					>
+					Trending Destinations
+				</Box>				
+
+				<Grid item xs={3} md={3}>
+					<LocationGrid locations={trendingLocations} responsive={{ xs: 1, sm: 3, md: 4, xl: 4,}} textStyle="absolute"/>
+				</Grid>
+			</Box>
+
+			<Box
+				sx={{
+					pb: 15,
+					px: 20,
+				}}
+				>
+				<Box
+					component="h3"
+					sx={{
+						color: "text.primary",
+						mb: { xs: 4, sm: 4, xl: 6 },
+						fontSize: 20,
+						fontWeight: Fonts.BOLD,
+					}}
+					>
+					Trending Destinations
+				</Box>							
+				<Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+					<Grid item xs={12} md={3} sx={{ position: "relative"}}> 
 						<Card
 							sx={{
-								borderRadius: '25px',
-								cursor: "pointer",
+								borderRadius: '15px',
 								// width: "100%",
-								height: "600px",
+								height: "500px",
 								display: "flex",
 								flexDirection: "column",
 							}}
 							>
 							<img 
-								src="/img/group.png" 
+								src="/assets/images/grand-canyon-national-park.jpeg" 
 								alt="Image" 
 								width="auto"
 								height="100%"/>
 						</Card>
-					</div>
-				</div>
-
-				<div className={styles.locationByType}>
-					<Box
-						component="h3"
-						sx={{
-							color: "text.primary",
-							mb: { xs: 4, sm: 4, xl: 6 },
-							fontSize: 20,
-							fontWeight: Fonts.BOLD,
-						}}
-						>
-						Find by type
-					</Box>				
-
-					<div>
-						<Grid item xs={4} md={4}>
-							<LocationGrid locations={locationByType} responsive={{ xs: 1, sm: 3, md: 4, xl: 5 }} textStyle="normal"/>
-						</Grid>
-					</div>
-				</div>
-
-				<div className={styles.locationByTrend}>
-					<Box
-						component="h3"
-						sx={{
-							color: "text.primary",
-							mb: { xs: 4, sm: 4, xl: 6 },
-							fontSize: 20,
-							fontWeight: Fonts.BOLD,
-						}}
-						>
-						Trending Destinations
-					</Box>				
-
-					<div>
-						<Grid item xs={3} md={3}>
-							<LocationGrid locations={trendingLocations} responsive={{ xs: 1, sm: 3, md: 4, xl: 4,}} textStyle="absolute"/>
-						</Grid>
-					</div>
-				</div>
-
-				<div className={styles.locationByTrend}>
-					<Box
-						component="h3"
-						sx={{
-							color: "text.primary",
-							mb: { xs: 4, sm: 4, xl: 6 },
-							fontSize: 20,
-							fontWeight: Fonts.BOLD,
-						}}
-						>
-						Trending Destinations
-					</Box>							
-					<Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-						<Grid item xs={12} md={3}> 
-							<Card
+						<Box
+							component="p"
+							sx={{
+								position: 'absolute',
+								bottom: '20px',
+								left: '28px',
+							}}
+							>
+							<Box
+								component="p"
 								sx={{
-									borderRadius: '15px',
-									// width: "100%",
-									height: "500px",
-									display: "flex",
-									flexDirection: "column",
+									color: '#fff',
+									fontSize: 20,
+									fontWeight: Fonts.REGULAR
 								}}
 								>
-								<img 
-									src="/img/image1.png" 
-									alt="Image" 
-									width="auto"
-									height="100%"/>
-							</Card>
-						</Grid>
-						<Grid item xs={12} md={6} >
-							<Box sx={{ flexGrow: 1 }} >
-								<Grid container spacing={4} columns={12}>
-									<Grid item xs={6}>
-										<Card
-											sx={{
-												borderRadius: '15px',
-												// width: "100%",
-												height: "242px",
-												display: "flex",
-												flexDirection: "column",
-											}}
-											>
-											<img 
-												src="/img/image1.png" 
-												alt="Image" 
-												width="auto"
-												height="100%"/>
-										</Card>											
-									</Grid>
-									<Grid item xs={6}>
-										<Card
-											sx={{
-												borderRadius: '15px',
-												// width: "100%",
-												height: "242px",
-												display: "flex",
-												flexDirection: "column",
-											}}
-											>
-											<img 
-												src="/img/image2.png" 
-												alt="Image" 
-												width="auto"
-												height="100%"/>
-										</Card>															
-									</Grid>
-									<Grid item xs={6}>
-										<Card
-											sx={{
-												borderRadius: '15px',
-												// width: "100%",
-												height: "242px",
-												display: "flex",
-												flexDirection: "column",
-											}}
-											>
-											<img 
-												src="/img/image3.png" 
-												alt="Image" 
-												width="auto"
-												height="100%"/>
-										</Card>															
-									</Grid>
-									<Grid item xs={6}>
-										<Card
-											sx={{
-												borderRadius: '15px',
-												// width: "100%",
-												height: "242px",
-												display: "flex",
-												flexDirection: "column",
-											}}
-											>
-											<img 
-												src="/img/image4.png" 
-												alt="Image" 
-												width="auto"
-												height="100%"/>
-										</Card>															
-									</Grid>									
-								</Grid>
+								Grand Canyon National Park
 							</Box>
-						</Grid>
-						<Grid item xs={12} md={3}>
-							<Card
+							<Box
+								component="p"
 								sx={{
-									borderRadius: '15px',
-									// width: "100%",
-									height: "500px",
-									display: "flex",
-									flexDirection: "column",
+									color: '#fff',
+									fontSize: 12,
+									fontWeight: Fonts.REGULAR
 								}}
 								>
-								<img 
-									src="/img/image1.png" 
-									alt="Image" 
-									width="auto"
-									height="100%"/>
-							</Card>
-						</Grid>						
+								Williams, AZ
+							</Box>							
+						</Box>
 					</Grid>
+					<Grid item xs={12} md={6}>
+						<Box sx={{ flexGrow: 1 }} >
+							<Grid container spacing={4} columns={12}>
+								<Grid item xs={6} sx={{ position: "relative"}}>
+									<Card
+										sx={{
+											borderRadius: '15px',
+											// width: "100%",
+											height: "242px",
+											display: "flex",
+											flexDirection: "column",
+										}}
+										>
+										<img 
+											src="/assets/images/utah-national-park.jpeg" 
+											alt="Image" 
+											width="auto"
+											height="100%"/>
+									</Card>
+									<Box
+										component="p"
+										sx={{
+											position: 'absolute',
+											bottom: '20px',
+											left: '28px',
+										}}
+										>
+										<Box
+											component="p"
+											sx={{
+												color: '#fff',
+												fontSize: 20,
+												fontWeight: Fonts.REGULAR
+											}}
+											>
+											Utah National Parks
+										</Box>	
+										<Box
+											component="p"
+											sx={{
+												color: '#fff',
+												fontSize: 12,
+												fontWeight: Fonts.REGULAR
+											}}
+											>
+											California
+										</Box>																															
+									</Box>
+								</Grid>
+								<Grid item xs={6} sx={{ position: "relative"}}>
+									<Card
+										sx={{
+											borderRadius: '15px',
+											// width: "100%",
+											height: "242px",
+											display: "flex",
+											flexDirection: "column",
+										}}
+										>
+										<img 
+											src="/assets/images/nature-2.jpeg" 
+											alt="Image" 
+											width="auto"
+											height="100%"/>
+									</Card>
+									<Box
+										component="p"
+										sx={{
+											position: 'absolute',
+											bottom: '20px',
+											left: '28px',
+										}}
+										>
+										<Box
+											component="p"
+											sx={{
+												color: '#fff',
+												fontSize: 20,
+												fontWeight: Fonts.REGULAR
+											}}
+											>
+											Maui
+										</Box>
+										<Box
+											component="p"
+											sx={{
+												color: '#fff',
+												fontSize: 12,
+												fontWeight: Fonts.REGULAR
+											}}
+											>
+											Hawaii
+										</Box>																																
+									</Box>		
+								</Grid>
+								<Grid item xs={6} sx={{ position: "relative"}}>
+									<Card
+										sx={{
+											borderRadius: '15px',
+											// width: "100%",
+											height: "242px",
+											display: "flex",
+											flexDirection: "column",
+										}}
+										>
+										<img 
+											src="/assets/images/nature-3.jpeg" 
+											alt="Image" 
+											width="auto"
+											height="100%"/>
+									</Card>
+									<Box
+										component="p"
+										sx={{
+											position: 'absolute',
+											bottom: '20px',
+											left: '28px',
+										}}
+										>
+										<Box
+											component="p"
+											sx={{
+												color: '#fff',
+												fontSize: 20,
+												fontWeight: Fonts.REGULAR
+											}}
+											>
+											Utah National Parks
+										</Box>
+										<Box
+											component="p"
+											sx={{
+												color: '#fff',
+												fontSize: 12,
+												fontWeight: Fonts.REGULAR
+											}}
+											>
+											Wyoming
+										</Box>																																	
+									</Box>
+								</Grid>
+								<Grid item xs={6} sx={{ position: "relative"}}>
+									<Card
+										sx={{
+											borderRadius: '15px',
+											// width: "100%",
+											height: "242px",
+											display: "flex",
+											flexDirection: "column",
+										}}
+										>
+										<img 
+											src="/assets/images/nature-4.jpeg" 
+											alt="Image" 
+											width="auto"
+											height="100%"/>
+									</Card>	
+									<Box
+										component="p"
+										sx={{
+											position: 'absolute',
+											bottom: '20px',
+											left: '28px',
+										}}
+										>									
+										<Box
+											component="p"
+											sx={{
+												color: '#fff',
+												fontSize: 20,
+												fontWeight: Fonts.REGULAR
+											}}
+											>
+											Glacier National Park
+										</Box>
+										<Box
+											component="p"
+											sx={{
+												color: '#fff',
+												fontSize: 12,
+												fontWeight: Fonts.REGULAR
+											}}
+											>
+											Montana
+										</Box>
+									</Box>									
+								</Grid>									
+							</Grid>
+						</Box>
+					</Grid>
+					<Grid item xs={12} md={3} sx={{ position: "relative"}}>
+						<Card
+							sx={{
+								borderRadius: '15px',
+								// width: "100%",
+								height: "500px",
+								display: "flex",
+								flexDirection: "column",
+							}}
+							>
+							<img 
+								src="/assets/images/honolulu.jpeg" 
+								alt="Image" 
+								width="auto"
+								height="100%"/>
+						</Card>
+						<Box
+							component="p"
+							sx={{
+								position: 'absolute',
+								bottom: '20px',
+								left: '28px',
+							}}
+							>			
+							<Box
+								component="p"
+								sx={{
+									color: '#fff',
+									fontSize: 20,
+									fontWeight: Fonts.REGULAR
+								}}
+								>
+								Honolulu
+							</Box>
+							<Box
+								component="p"
+								sx={{
+									color: '#fff',
+									fontSize: 12,
+									fontWeight: Fonts.REGULAR
+								}}
+								>
+								Hawaii
+							</Box>													
+						</Box>					
+					</Grid>						
+				</Grid>
+			</Box>
+
+      <Box
+        sx={{
+          pb: 15,
+          px: 20,
+          backgroundColor: "#F2F1F6"
+        }}
+        >
+        <Grid container spacing={4}>
+          <Grid item xs={4}>
+            <Box>
+              <Box
+                component="h4"
+                sx={{
+                  fontSize: 20,
+                  color: "#000",
+                  fontWeight: Fonts.REGULAR,
+                }}
+                >
+                How Easy to find the perfect Travel partner and Reduce travel expenses?
+              </Box>
+              <Box
+                component="h4"
+                sx={{
+                  fontSize: 40,
+                  color: "#000",
+                  fontWeight: Fonts.BOLD
+                }}
+                >
+                You Just 3 Steps Away
+              </Box>
+              <Box
+                sx={{
+                  pt: 4,
+                  display: "flex",
+                  alignItems: "center",
+                }}
+                >
+                <Image src={iconPlay} alt="Play icon" />
+                <Box
+                  component="p"
+                  sx={{
+                    fontSize: 20,
+                    color: '#657ADC',
+                    fontWeight: Fonts.BOLD,
+                    px:3,
+                  }}
+                  >
+                  Watch Now
+                </Box>                
+              </Box>              
+            </Box>
+          </Grid>
+          <Grid item xs={2}>
+            <Box
+              sx={{
+                textAlign: "center"
+              }}>
+              <Image 
+                src={'/img/post.png'} 
+                alt="Create post icon" 
+                width={117}
+                height={145} />
+
+              <Box
+                component="p" 
+                sx={{
+                  fontSize: 18,
+                  color: "#657ADC",
+                  fontWeight: Fonts.BOLD
+                }}>
+                Create Post
+              </Box>
+              <Box
+                component="p" 
+                sx={{
+                  fontSize: 14,
+                  color: "#000",
+                  fontWeight: Fonts.REGULAR
+                }}>
+                for sharing place or search for places and travellers
+              </Box>
+            </Box>
+          </Grid>
+          <Grid item xs={2}>
+            <Box
+              sx={{
+                textAlign: "center"
+              }}>
+              <Image 
+                src={'/img/patner.png'} 
+                alt="Create post icon" 
+                width={117}
+                height={145} />
+              <Box
+                component="p" 
+                sx={{
+                  fontSize: 18,
+                  color: "#657ADC",
+                  fontWeight: Fonts.BOLD
+                }}>
+                Find Perfect Patner
+              </Box>
+              <Box
+                component="p" 
+                sx={{
+                  fontSize: 14,
+                  color: "#000",
+                  fontWeight: Fonts.REGULAR
+                }}>
+                for sharing place or search for places and travellers
+              </Box>
+            </Box>
+          </Grid>
+          <Grid item xs={2}>
+            <Box
+              sx={{
+                textAlign: "center"
+              }}>
+              <Image 
+                src={'/img/post.png'} 
+                alt="Create post icon" 
+                width={117}
+                height={145} />
+
+              <Box
+                component="p" 
+                sx={{
+                  fontSize: 18,
+                  color: "#657ADC",
+                  fontWeight: Fonts.BOLD
+                }}>
+                Save your Money
+              </Box>
+              <Box
+                component="p" 
+                sx={{
+                  fontSize: 14,
+                  color: "#000",
+                  fontWeight: Fonts.REGULAR
+                }}>
+                for sharing place or search for places and travellers
+              </Box>
+            </Box>
+          </Grid>         
+        </Grid>
+      </Box>
+
+			{/* <div className={styles.section04_back}>
+				<div className={styles.section04}>
+					<div className={styles.section04_main}>
+						<div className={styles.section04_text1}>How Easy to find the perfect Travel partner and Reduce travel expenses?</div>
+						<div className={styles.section04_text_big}>You Just 3 Steps Away</div>
+						<div className={styles.section04_watch_now}>
+							<Image src={iconPlay} alt="Play icon" /> Watch Now
+						</div>
+					</div>
+					<div className={styles.section04_create_post}>
+						<div className={styles.section04_create_post_image}>
+							<Image src={'/img/post.png'} alt="Create post icon" width={117}
+								height={145} />
+						</div>
+						<div className={styles.section04_create_post_title}>Create Post</div>
+						<div className={styles.section04_create_post_text}>
+							for sharing place or search for places and travellers
+						</div>
+					</div>
+					<div className={styles.section04_create_post}>
+						<div className={styles.section04_create_post_image}>
+							<Image src={'/img/patner.png'} alt="Create post icon" width={156}
+								height={146} />
+						</div>
+						<div className={styles.section04_create_post_title}>Find Perfect Patner</div>
+						<div className={styles.section04_create_post_text}>
+							for sharing place or search for places and travellers
+						</div>
+					</div>
+					<div className={styles.section04_create_post}>
+						<div className={styles.section04_create_post_image}>
+							<Image src={'/img/save_money.png'} alt="Create post icon" width={156}
+								height={146} />
+						</div>
+						<div className={styles.section04_create_post_title}>Save your  Money</div>
+						<div className={styles.section04_create_post_text}>
+							for sharing place or search for places and travellers
+						</div>
+					</div>
 				</div>
+			</div> */}
+			
+			<div className={styles.section05}>
+				<div className={styles.section05_content}>
+					<div className={styles.section05_content_main}>
+						<Image src={'/img/phone_show.png'} alt="Create post icon" width={324}
+							height={404} />
+					</div>
+					<div className={styles.section05_content_text_area}>
+						<div className={styles.section05_content_text_area_title}>
+							Download totel app for best Experience
+						</div>
+						<div className={styles.section05_content_text_muted}>
+							Available for free on these platforms
+						</div>
+						<div className={styles.section05_content_app_icons}>
+							<div className={styles.section05_content_app_icons_img}>
+								<Image src={'/img/apple_store.png'} alt="Create post icon" width={198}
+									height={58} />
+							</div>
+							<div>
+								<Image src={'/img/play_store.png'} alt="Create post icon" width={198}
+									height={58} />
 
-        {/* <div className={styles.section01}>
-          <div className={styles.title}>
-            <h3>Fit in your choice</h3>
-          </div>
-          <div className={styles.row}>
-            <div className={styles.col}>
-              <div className={styles.image}>
-                <Image
-                  src="/img/image1.png"
-                  alt="name"
-                  width={200}
-                  height={200}
-                />
-              </div>
-              <div className={styles.details}>
-                <p className={styles.postname}>
-                  Ramada Limited & Suites
-                </p>
-                <p className={styles.textmuted}>Albert Flores</p>
-                <a className={styles.button}>4 Jun - 6 Jun</a>
-                <p className={styles.text_normal}>$90 / Day</p>
-              </div>
-            </div>
-            <div className={styles.col}>
-              <div className={styles.image}>
+							</div>
+						</div>
 
-                <Image
-                  src="/img/image2.png"
-                  alt="name"
-                  width={200}
-                  height={200}
-                />
-              </div>
-              <div className={styles.details}>
-                <p className={styles.postname}>
-                  Sequoia Hotel and Rooms
-                </p>
-                <p className={styles.textmuted}>Lewis Barnett</p>
-                <a className={styles.button}>4 Jun - 6 Jun</a>
-                <p className={styles.text_normal}>$90 / Day</p>
-              </div>
-            </div>
-            <div className={styles.col}>
-              <div className={styles.image}>
-
-                <Image
-                  src="/img/image3.png"
-                  alt="name"
-                  width={200}
-                  height={200}
-                />
-              </div>
-              <div className={styles.details}>
-                <p className={styles.postname}>
-                  Royal Citadel Resort & Spa
-                </p>
-                <p className={styles.textmuted}>Alyssa Oliver</p>
-                <a className={styles.button}>4 Jun - 6 Jun</a>
-                <p className={styles.text_normal}><strong>$90</strong> /   Day</p>
-              </div>
-            </div>
-          </div>
-        </div> */}
-
-        {/* Section 2 */}
-        {/* <div className={styles.section02}>
-          <div className={styles.title_div}>
-            <div className={styles.title}>
-              <h3>Traveller in Miami <b className={styles.textmuted} style={{ fontSize: "12px" }}>56 more</b></h3>
-            </div>
-            <div className={styles.title_right}>
-              <Link href={'/traveller'}>View all</Link>
-            </div>
-          </div>
-          <div className={styles.travaller_row}>
-            <TravellerCard
-              user_name={'Sonya Clarke'}
-              user_img={'/img/user1.png'}
-              date={'March 24, 2020'}
-              post_img={'/img/image4.png'}
-              post_name={'Hilton Miami Downtowss'}
-              date_range={'4 Jun - 6 Jun'}
-              rating={'1.0'}
-              amount={'$90'}
-              gender={'male'}
-            />
-
-            <TravellerCard
-              user_name={'Emilio Tran'}
-              user_img={'/img/user2.png'}
-              date={'March 24, 2020'}
-              post_img={'/img/image5.png'}
-              post_name={'Vagabond Cabin'}
-              date_range={'4 Jun - 6 Jun'}
-              rating={'2.0'}
-              amount={'$90'}
-              gender={'male/female'}
-            />
-
-            <TravellerCard
-              user_name={'Dale Hanson'}
-              user_img={'/img/user3.png'}
-              date={'March 24, 2020'}
-              post_img={'/img/image7.png'}
-              post_name={'Celeste Hotel'}
-              date_range={'4 Jun - 6 Jun'}
-              rating={'3.0'}
-              amount={'$90'}
-              gender={'male'}
-            />
-
-            <TravellerCard
-              user_name={'Vanessa Hamilton'}
-              user_img={'/img/user4.png'}
-              date={'March 24, 2020'}
-              post_img={'/img/image9.png'}
-              post_name={'Slumber Cottage'}
-              date_range={'4 Jun - 6 Jun'}
-              rating={'4.0'}
-              amount={'$90'}
-              gender={'female'}
-            />
-
-          </div>
-        </div>
-
-        <div className={styles.section03}>
-          <div className={styles.title_div}>
-            <div className={styles.title}>
-              <h3>Travel to Miami <b className={styles.textmuted} style={{ fontSize: "12px" }}>56 more</b></h3>
-            </div>
-            <div className={styles.title_right}>
-              <Link href={'/travel'}>View all</Link>
-            </div>
-          </div>
-          <div className={styles.travaller_row}>
-            <TravelCard
-              user_name={'Sonya Clarke'}
-              user_img={'/img/user5.png'}
-              post_name={'Royal Galaxy Resort'}
-              date_range={'4 Jun - 6 Jun'}
-              rating={'5.0'}
-              amount={'$90'}
-              description={'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.'}
-            />
-
-            <TravelCard
-              user_name={'Winter Gilbert'}
-              user_img={'/img/user7.png'}
-              post_name={'Red wood hotel'}
-              date_range={'4 Jun - 6 Jun'}
-              rating={'1.0'}
-              amount={'$100'}
-              description={'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.'}
-            />
-
-            <TravelCard
-              user_name={'Elsie Lindsey'}
-              user_img={'/img/user8.png'}
-              post_name={'Obsidian Bay Hotel'}
-              date_range={'4 Jun - 6 Jun'}
-              rating={'2.0'}
-              amount={'$100'}
-              description={'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.'}
-            />
-
-            <TravelCard
-              user_name={'Aliyah Bailey'}
-              user_img={'/img/user9.png'}
-              post_name={'Primal Covert Hotel'}
-              date_range={'4 Jun - 6 Jun'}
-              rating={'2.0'}
-              amount={'$100'}
-              description={'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.'}
-            />
-
-          </div>
-        </div> */}
-
-        {/* Section 4 */}
-        <div className={styles.section04_back}>
-          <div className={styles.section04}>
-            <div className={styles.section04_main}>
-              <div className={styles.section04_text1}>How Easy to find the perfect Travel partner and Reduce travel expenses?</div>
-              <div className={styles.section04_text_big}>You Just 3 Steps Away</div>
-              <div className={styles.section04_watch_now}>
-                <Image src={iconPlay} alt="Play icon" /> Watch Now
-              </div>
-            </div>
-            <div className={styles.section04_create_post}>
-              <div className={styles.section04_create_post_image}>
-                <Image src={'/img/post.png'} alt="Create post icon" width={117}
-                  height={145} />
-              </div>
-              <div className={styles.section04_create_post_title}>Create Post</div>
-              <div className={styles.section04_create_post_text}>
-                for sharing place or search for places and travellers
-              </div>
-            </div>
-            <div className={styles.section04_create_post}>
-              <div className={styles.section04_create_post_image}>
-                <Image src={'/img/patner.png'} alt="Create post icon" width={156}
-                  height={146} />
-              </div>
-              <div className={styles.section04_create_post_title}>Find Perfect Patner</div>
-              <div className={styles.section04_create_post_text}>
-                for sharing place or search for places and travellers
-              </div>
-            </div>
-            <div className={styles.section04_create_post}>
-              <div className={styles.section04_create_post_image}>
-                <Image src={'/img/save_money.png'} alt="Create post icon" width={156}
-                  height={146} />
-              </div>
-              <div className={styles.section04_create_post_title}>Save your  Money</div>
-              <div className={styles.section04_create_post_text}>
-                for sharing place or search for places and travellers
-              </div>
-            </div>
-          </div>
-        </div>
-				
-        {/* Section 5 */}
-        <div className={styles.section05}>
-          <div className={styles.section05_content}>
-            <div className={styles.section05_content_main}>
-              <Image src={'/img/phone_show.png'} alt="Create post icon" width={324}
-                height={404} />
-            </div>
-            <div className={styles.section05_content_text_area}>
-              <div className={styles.section05_content_text_area_title}>
-                Download totel app for best Experience
-              </div>
-              <div className={styles.section05_content_text_muted}>
-                Available for free on these platforms
-              </div>
-              <div className={styles.section05_content_app_icons}>
-                <div className={styles.section05_content_app_icons_img}>
-                  <Image src={'/img/apple_store.png'} alt="Create post icon" width={198}
-                    height={58} />
-                </div>
-                <div>
-                  <Image src={'/img/play_store.png'} alt="Create post icon" width={198}
-                    height={58} />
-
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-      </main>
-
-      <WrapFooter />
-    </div>
+					</div>
+				</div>
+			</div>
+		</Box>
   );
 }

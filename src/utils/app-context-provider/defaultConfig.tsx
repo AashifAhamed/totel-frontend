@@ -31,7 +31,7 @@ export const backgroundDark = {
 
 export const backgroundLight = {
   paper: "#FFFFFF",
-  default: "#F4F7FE",
+  default: "#FFFFFF",
 };
 
 const cardRadius = ThemeStyleRadius.STANDARD;
@@ -44,7 +44,7 @@ export const defaultTheme: any = {
       mode: ThemeMode.LIGHT,
       background: {
         paper: "#FFFFFF",
-        default: "#F4F7FE",
+        default: "#FFFFFF",
       },
       primary: {
         main: "#0A8FDC",
@@ -208,7 +208,7 @@ export const DarkSidebar: SidebarData = {
   sidebarBgColor: "#313541",
   sidebarTextColor: "#fff",
   sidebarHeaderColor: "#313541",
-  sidebarMenuSelectedBgColor: "#F4F7FE",
+  sidebarMenuSelectedBgColor: "#FFFFFF",
   sidebarMenuSelectedTextColor: "rgba(0, 0, 0, 0.87)",
   mode: ThemeMode.DARK,
 };
@@ -216,7 +216,7 @@ export const LightSidebar: SidebarData = {
   sidebarBgColor: "#fff",
   sidebarTextColor: "rgba(0, 0, 0, 0.60)",
   sidebarHeaderColor: "#fff",
-  sidebarMenuSelectedBgColor: "#F4F7FE",
+  sidebarMenuSelectedBgColor: "#FFFFFF",
   sidebarMenuSelectedTextColor: "rgba(0, 0, 0, 0.87)",
   mode: ThemeMode.LIGHT,
 };

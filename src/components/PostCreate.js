@@ -90,7 +90,7 @@ const PostCreate = ({ }) => {
 	const [value, setValue] = React.useState(2);
 
 	useEffect(() => {
-		if (state.userInfo) {
+		if (state?.userInfo) {
 			router.push('/?message=You-are-logged-in');
 		}
 	}, []);
